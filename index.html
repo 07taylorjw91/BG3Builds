@@ -820,6 +820,319 @@
     }
   }
 
+
+  /* Mobile-only controls hidden on Desktop & Landscape */
+  .mobile-header-actions {
+    display: none;
+  }
+
+  .mobile-nav-bar {
+    display: none;
+  }
+
+  /* Dedicated Portrait Phone Layout (Leaves Landscape & Desktop untouched) */
+  @media (max-width: 768px) and (orientation: portrait), (max-width: 540px) {
+    header {
+      padding: 0.85rem 0.8rem 0.75rem;
+    }
+
+    .header-top {
+      margin-bottom: 0.5rem;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .title-group {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .title-group h1 {
+      font-size: 1.15rem;
+      line-height: 1.25;
+      margin-bottom: 0.15rem;
+    }
+
+    .title-group p {
+      font-size: 0.78rem;
+      line-height: 1.3;
+    }
+
+    .mobile-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .btn-mobile-tools {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.45rem 0.68rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-mobile-tools.active {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    /* Collapsible Search & Tools Drawer in Portrait */
+    .controls {
+      display: none;
+      width: 100%;
+      padding-top: 0.55rem;
+      margin-top: 0.2rem;
+      border-top: 1px solid var(--border-color);
+      gap: 0.45rem;
+    }
+
+    .controls.mobile-open {
+      display: flex;
+    }
+
+    .search-box {
+      flex: 1 1 100%;
+    }
+
+    .search-box input {
+      width: 100%;
+      font-size: 16px;
+      padding: 0.52rem 0.75rem;
+    }
+
+    .controls .btn {
+      flex: 1 1 calc(50% - 0.45rem);
+      text-align: center;
+      justify-content: center;
+      padding: 0.52rem 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    /* Hide cramped horizontal tab strips in Portrait; show Sticky Companion Switcher */
+    .nav-group {
+      display: none;
+    }
+
+    .mobile-nav-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.55rem 0.8rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+    }
+
+    .mobile-nav-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--accent-gold);
+      width: 40px;
+      height: 42px;
+      border-radius: 8px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .mobile-nav-step:active {
+      background: var(--accent-gold-soft);
+      border-color: var(--accent-gold);
+    }
+
+    .mobile-select-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .mobile-tab-select {
+      width: 100%;
+      height: 42px;
+      background: var(--bg-card);
+      border: 1px solid var(--accent-gold);
+      color: var(--text-primary);
+      border-radius: 8px;
+      padding: 0 2.1rem 0 0.75rem;
+      font-size: 15px;
+      font-weight: 600;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      text-overflow: ellipsis;
+    }
+
+    .mobile-select-arrow {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-gold);
+      pointer-events: none;
+      font-size: 0.78rem;
+    }
+
+    /* Spacious Single-Column Containers */
+    main {
+      padding: 0 0.65rem;
+      margin-top: 0.85rem;
+    }
+
+    .grid-2, .grid-4 {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .card {
+      padding: 0.95rem 0.85rem;
+      margin-bottom: 0.95rem;
+      border-radius: 10px;
+    }
+
+    .card h2 {
+      font-size: 1.08rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .char-banner {
+      padding: 0.95rem 0.9rem;
+      margin-bottom: 0.95rem;
+    }
+
+    .char-title {
+      font-size: 1.18rem;
+      line-height: 1.28;
+    }
+
+    .char-subtitle {
+      font-size: 0.8rem;
+      padding: 0.22rem 0.55rem;
+    }
+
+    .stat-strip {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.42rem;
+    }
+
+    .stat-box {
+      padding: 0.45rem 0.25rem;
+    }
+
+    /* Filter Pills as Clean 2-Column Touch Grid */
+    .act-filters, .tier-filters {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.4rem;
+    }
+
+    .act-pill, .tier-pill {
+      text-align: center;
+      padding: 0.5rem 0.5rem;
+      font-size: 0.8rem;
+      border-radius: 8px;
+    }
+
+    .act-filters > :last-child:nth-child(odd),
+    .tier-filters > :last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+
+    /* Transform Cramped Multi-Column Tables into Stacked Portrait Cards */
+    .table-wrap {
+      overflow-x: visible;
+      margin-top: 0.35rem;
+    }
+
+    table, thead, tbody, th, td, tr {
+      display: block;
+      width: 100%;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody tr {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 9px;
+      padding: 0.75rem 0.85rem;
+      margin-bottom: 0.7rem;
+    }
+
+    tbody tr:last-child {
+      margin-bottom: 0;
+    }
+
+    tbody td {
+      padding: 0.32rem 0;
+      border-bottom: none;
+      font-size: 0.89rem;
+      line-height: 1.5;
+    }
+
+    /* First cell becomes the prominent card header */
+    tbody td:first-child {
+      width: 100%;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      padding-top: 0;
+      padding-bottom: 0.45rem;
+      margin-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border-color);
+      white-space: normal;
+    }
+
+    /* Subsequent cells display their column header as an uppercase micro-label */
+    tbody td:not(:first-child)::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 0.69rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.14rem;
+    }
+
+    tbody td:not(:first-child) + td {
+      margin-top: 0.3rem;
+      padding-top: 0.42rem;
+      border-top: 1px dashed rgba(128, 138, 160, 0.22);
+    }
+
+    .gear-item {
+      padding: 0.72rem 0.7rem;
+      gap: 0.65rem;
+    }
+
+    .gear-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 0.18rem;
+    }
+
+    .gear-text {
+      font-size: 0.88rem;
+      line-height: 1.48;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -831,7 +1144,11 @@
         <h1>Baldur's Gate 3 — DIQ Full Roster &amp; Build Reference</h1>
         <p>Difficulty, Immersion, Quality Modlist • Expansion Level 13–20 • Gale Origin + All 9 Companions</p>
       </div>
-      <div class="controls">
+      <div class="mobile-header-actions">
+        <button class="btn btn-install" id="mobileInstallAppBtn" title="Install as an Android App">Install</button>
+        <button class="btn-mobile-tools" id="mobileToolsToggleBtn" aria-expanded="false">Search &amp; Tools</button>
+      </div>
+      <div class="controls" id="headerControls">
         <div class="search-box">
           <input type="text" id="searchInput" placeholder="Search spells, feats, companions..." aria-label="Search guide">
         </div>
@@ -865,6 +1182,32 @@
     </nav>
   </div>
 </header>
+
+<div class="mobile-nav-bar" aria-label="Mobile Section Switcher">
+  <button class="mobile-nav-step" id="prevTabBtn" title="Previous Section" aria-label="Previous Section">&#8249;</button>
+  <div class="mobile-select-wrap">
+    <select class="mobile-tab-select" id="mobileTabSelect" aria-label="Select Build or Guide Section">
+      <optgroup label="Core Squad &amp; Trackers">
+        <option value="overview">Overview &amp; Combat Sequence</option>
+        <option value="bonuses" id="mobileBonusOption">Permanent Bonuses (0 / 14)</option>
+        <option value="gale">Gale — Mesmerist 20 (Origin)</option>
+        <option value="laezel">Lae'zel — Paladin / Echo Knight</option>
+        <option value="shadowheart">Shadowheart — Twilight Cleric 20</option>
+        <option value="astarion">Astarion — Gloom Stalker / Fencer</option>
+      </optgroup>
+      <optgroup label="Quest Swap Companions">
+        <option value="wyll">Wyll — Chronurgy Wizard 20</option>
+        <option value="karlach">Karlach — Zealot / Champion</option>
+        <option value="minthara">Minthara — Conquest / Sorcerer</option>
+        <option value="halsin">Halsin — Moon Druid 20</option>
+        <option value="jaheira">Jaheira — Stars Druid / Hunter</option>
+        <option value="minsc">Minsc — Hunter / Wildheart</option>
+      </optgroup>
+    </select>
+    <span class="mobile-select-arrow">&#9662;</span>
+  </div>
+  <button class="mobile-nav-step" id="nextTabBtn" title="Next Section" aria-label="Next Section">&#8250;</button>
+</div>
 
 <main>
   <!-- ==================== OVERVIEW TAB ==================== -->
@@ -2622,6 +2965,109 @@
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     });
   }
+
+
+  // Populate data-label attributes on all table cells for Portrait Stacked Cards
+  document.querySelectorAll('table').forEach(table => {
+    const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      Array.from(tr.children).forEach((td, idx) => {
+        if (headers[idx]) {
+          td.setAttribute('data-label', headers[idx]);
+        }
+      });
+    });
+  });
+
+  // Mobile Tools Drawer Toggle
+  const mobileToolsToggleBtn = document.getElementById('mobileToolsToggleBtn');
+  const headerControls = document.getElementById('headerControls');
+  if (mobileToolsToggleBtn && headerControls) {
+    mobileToolsToggleBtn.addEventListener('click', () => {
+      const isOpen = headerControls.classList.toggle('mobile-open');
+      mobileToolsToggleBtn.classList.toggle('active', isOpen);
+      mobileToolsToggleBtn.setAttribute('aria-expanded', String(isOpen));
+      mobileToolsToggleBtn.textContent = isOpen ? 'Hide Tools' : 'Search & Tools';
+    });
+  }
+
+  // Mobile Sticky Section Select & Prev/Next Step Buttons
+  const mobileTabSelect = document.getElementById('mobileTabSelect');
+  const prevTabBtn = document.getElementById('prevTabBtn');
+  const nextTabBtn = document.getElementById('nextTabBtn');
+  const tabOrder = Array.from(tabBtns).map(b => b.dataset.tab);
+
+  const origActivateTab = activateTab;
+  activateTab = function(tabName) {
+    origActivateTab(tabName);
+    if (mobileTabSelect && mobileTabSelect.value !== tabName) {
+      mobileTabSelect.value = tabName;
+    }
+  };
+
+  // Re-bind tab buttons & jump links to wrapped activateTab
+  tabBtns.forEach(btn => {
+    btn.onclick = () => activateTab(btn.dataset.tab);
+  });
+  document.querySelectorAll('.jump-link').forEach(link => {
+    link.onclick = () => activateTab(link.dataset.jump);
+  });
+
+  if (mobileTabSelect) {
+    mobileTabSelect.addEventListener('change', (e) => {
+      activateTab(e.target.value);
+    });
+  }
+
+  if (prevTabBtn) {
+    prevTabBtn.addEventListener('click', () => {
+      const current = mobileTabSelect ? mobileTabSelect.value : 'overview';
+      const idx = tabOrder.indexOf(current);
+      const prev = tabOrder[(idx - 1 + tabOrder.length) % tabOrder.length];
+      activateTab(prev);
+    });
+  }
+
+  if (nextTabBtn) {
+    nextTabBtn.addEventListener('click', () => {
+      const current = mobileTabSelect ? mobileTabSelect.value : 'overview';
+      const idx = tabOrder.indexOf(current);
+      const next = tabOrder[(idx + 1) % tabOrder.length];
+      activateTab(next);
+    });
+  }
+
+  // Keep Mobile Permanent Bonus dropdown option synced with counter
+  const mobileBonusOption = document.getElementById('mobileBonusOption');
+  const origUpdateBonusCounter = updateBonusCounter;
+  updateBonusCounter = function() {
+    origUpdateBonusCounter();
+    if (mobileBonusOption && bonusCounter) {
+      mobileBonusOption.textContent = `Permanent Bonuses (${bonusCounter.textContent})`;
+    }
+  };
+  updateBonusCounter();
+
+  // Mirror Install Prompt to Mobile Header Button
+  const mobileInstallAppBtn = document.getElementById('mobileInstallAppBtn');
+  window.addEventListener('beforeinstallprompt', (e) => {
+    if (mobileInstallAppBtn) mobileInstallAppBtn.classList.add('visible');
+  });
+  if (mobileInstallAppBtn) {
+    mobileInstallAppBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        mobileInstallAppBtn.classList.remove('visible');
+        installAppBtn.classList.remove('visible');
+      }
+      deferredPrompt = null;
+    });
+  }
+  window.addEventListener('appinstalled', () => {
+    if (mobileInstallAppBtn) mobileInstallAppBtn.classList.remove('visible');
+  });
 
 </script>
 </body>
