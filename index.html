@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1117" id="metaThemeColor">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BG3 DIQ Guide">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<title>BG3 DIQ Complete Party &amp; Companion Build Guide v3</title>
+<style>
+  :root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #171a23;
+    --bg-card: #1d212d;
+    --bg-elevated: #252a38;
+    --border-color: #2f3648;
+    --border-accent: #c9a45c;
+    --text-primary: #eceef4;
+    --text-secondary: #a8b0c3;
+    --text-muted: #767f96;
+    --accent-gold: #d4af64;
+    --accent-gold-soft: rgba(212, 175, 100, 0.14);
+    --accent-purple: #a78bfa;
+    --accent-purple-soft: rgba(167, 139, 250, 0.14);
+    --accent-crimson: #f87171;
+    --accent-crimson-soft: rgba(248, 113, 113, 0.14);
+    --accent-blue: #60a5fa;
+    --accent-blue-soft: rgba(96, 165, 250, 0.14);
+    --accent-emerald: #34d399;
+    --accent-emerald-soft: rgba(52, 211, 153, 0.14);
+    --accent-amber: #fbbf24;
+    --accent-amber-soft: rgba(251, 191, 36, 0.14);
+    --accent-indigo: #818cf8;
+    --accent-indigo-soft: rgba(129, 140, 248, 0.14);
+    --accent-orange: #fb923c;
+    --accent-orange-soft: rgba(251, 146, 60, 0.14);
+    --accent-rose: #f472b6;
+    --accent-rose-soft: rgba(244, 114, 182, 0.14);
+    --accent-teal: #2dd4bf;
+    --accent-teal-soft: rgba(45, 212, 191, 0.14);
+    --accent-lime: #a3e635;
+    --accent-lime-soft: rgba(163, 230, 53, 0.14);
+    --accent-sky: #38bdf8;
+    --accent-sky-soft: rgba(56, 189, 248, 0.14);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --radius: 10px;
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #f4f1ea;
+    --bg-secondary: #ebe6da;
+    --bg-card: #ffffff;
+    --bg-elevated: #f8f6f0;
+    --border-color: #dcd5c5;
+    --border-accent: #9e7830;
+    --text-primary: #1e2028;
+    --text-secondary: #4a5060;
+    --text-muted: #72798a;
+    --accent-gold: #946d24;
+    --accent-gold-soft: rgba(148, 109, 36, 0.12);
+    --accent-purple: #6d28d9;
+    --accent-purple-soft: rgba(109, 40, 217, 0.1);
+    --accent-crimson: #b91c1c;
+    --accent-crimson-soft: rgba(185, 28, 28, 0.1);
+    --accent-blue: #1d4ed8;
+    --accent-blue-soft: rgba(29, 78, 216, 0.1);
+    --accent-emerald: #047857;
+    --accent-emerald-soft: rgba(4, 120, 87, 0.1);
+    --accent-amber: #b45309;
+    --accent-amber-soft: rgba(180, 83, 9, 0.1);
+    --accent-indigo: #4338ca;
+    --accent-indigo-soft: rgba(67, 56, 202, 0.1);
+    --accent-orange: #c2410c;
+    --accent-orange-soft: rgba(194, 65, 12, 0.1);
+    --accent-rose: #be185d;
+    --accent-rose-soft: rgba(190, 24, 93, 0.1);
+    --accent-teal: #0f766e;
+    --accent-teal-soft: rgba(15, 118, 110, 0.1);
+    --accent-lime: #4d7c0f;
+    --accent-lime-soft: rgba(77, 124, 15, 0.1);
+    --accent-sky: #0369a1;
+    --accent-sky-soft: rgba(3, 105, 161, 0.1);
+    --shadow: 0 6px 18px rgba(30, 32, 40, 0.08);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 4rem;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.65rem 1.5rem 1.25rem;
+  }
+
+  .header-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  .header-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .title-group h1 {
+    font-size: 1.62rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--accent-gold);
+    margin-bottom: 0.22rem;
+  }
+
+  .title-group p {
+    color: var(--text-secondary);
+    font-size: 0.93rem;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: center;
+  }
+
+  .search-box input {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.48rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    width: 230px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .search-box input:focus {
+    border-color: var(--accent-gold);
+  }
+
+  .btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.48rem 0.82rem;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn:hover {
+    border-color: var(--accent-gold);
+    background: var(--bg-elevated);
+  }
+
+  /* Navigation Tabs */
+  .nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .nav-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-right: 0.25rem;
+    min-width: 96px;
+  }
+
+  .tab-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    transition: all 0.15s;
+  }
+
+  .tab-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-muted);
+  }
+
+  .tab-btn.active {
+    background: var(--accent-gold-soft);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .dot-purple { background: var(--accent-purple); }
+  .dot-crimson { background: var(--accent-crimson); }
+  .dot-blue { background: var(--accent-blue); }
+  .dot-emerald { background: var(--accent-emerald); }
+  .dot-gold { background: var(--accent-gold); }
+  .dot-amber { background: var(--accent-amber); }
+  .dot-indigo { background: var(--accent-indigo); }
+  .dot-orange { background: var(--accent-orange); }
+  .dot-rose { background: var(--accent-rose); }
+  .dot-teal { background: var(--accent-teal); }
+  .dot-lime { background: var(--accent-lime); }
+  .dot-sky { background: var(--accent-sky); }
+
+  .count-pill {
+    font-size: 0.72rem;
+    padding: 0.06rem 0.42rem;
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+  }
+
+  .tab-btn.active .count-pill {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  /* Main Container */
+  main {
+    max-width: 1220px;
+    margin: 1.5rem auto 0;
+    padding: 0 1.5rem;
+  }
+
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.18s ease-out;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  body.show-all .tab-panel {
+    display: block;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px dashed var(--border-color);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Cards & Layout */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.35rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.25rem;
+  }
+
+  .card h2 {
+    font-size: 1.22rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.02rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  /* Character Banner */
+  .char-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-gold);
+    border-radius: var(--radius);
+    padding: 1.35rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .char-banner.purple { border-left-color: var(--accent-purple); }
+  .char-banner.crimson { border-left-color: var(--accent-crimson); }
+  .char-banner.blue { border-left-color: var(--accent-blue); }
+  .char-banner.emerald { border-left-color: var(--accent-emerald); }
+  .char-banner.amber { border-left-color: var(--accent-amber); }
+  .char-banner.indigo { border-left-color: var(--accent-indigo); }
+  .char-banner.orange { border-left-color: var(--accent-orange); }
+  .char-banner.rose { border-left-color: var(--accent-rose); }
+  .char-banner.teal { border-left-color: var(--accent-teal); }
+  .char-banner.lime { border-left-color: var(--accent-lime); }
+  .char-banner.sky { border-left-color: var(--accent-sky); }
+
+  .char-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .char-title {
+    font-size: 1.42rem;
+    font-weight: 700;
+  }
+
+  .char-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+  }
+  .badge-purple { background: var(--accent-purple-soft); color: var(--accent-purple); }
+  .badge-crimson { background: var(--accent-crimson-soft); color: var(--accent-crimson); }
+  .badge-blue { background: var(--accent-blue-soft); color: var(--accent-blue); }
+  .badge-emerald { background: var(--accent-emerald-soft); color: var(--accent-emerald); }
+  .badge-gold { background: var(--accent-gold-soft); color: var(--accent-gold); }
+  .badge-amber { background: var(--accent-amber-soft); color: var(--accent-amber); }
+  .badge-indigo { background: var(--accent-indigo-soft); color: var(--accent-indigo); }
+  .badge-orange { background: var(--accent-orange-soft); color: var(--accent-orange); }
+  .badge-rose { background: var(--accent-rose-soft); color: var(--accent-rose); }
+  .badge-teal { background: var(--accent-teal-soft); color: var(--accent-teal); }
+  .badge-lime { background: var(--accent-lime-soft); color: var(--accent-lime); }
+  .badge-sky { background: var(--accent-sky-soft); color: var(--accent-sky); }
+
+  /* Ability Score Strip */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    margin: 0.85rem 0;
+  }
+
+  .stat-box {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 0.35rem;
+    text-align: center;
+  }
+
+  .stat-box.primary {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold-soft);
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .stat-val {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .stat-box.primary .stat-val {
+    color: var(--accent-gold);
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin-top: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 0.7rem 0.85rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+  }
+
+  th {
+    background: var(--bg-elevated);
+    color: var(--accent-gold);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .lvl-col {
+    white-space: nowrap;
+    font-weight: 700;
+    color: var(--accent-gold);
+    width: 95px;
+  }
+
+  .jump-link {
+    color: var(--accent-gold);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+    background: none;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+  }
+
+  /* Lists & Callouts */
+  ul.clean-list, ol.clean-list {
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+  }
+
+  ul.clean-list li, ol.clean-list li {
+    margin-bottom: 0.45rem;
+  }
+
+  ul.clean-list li strong, ol.clean-list li strong {
+    color: var(--text-primary);
+  }
+
+  .callout {
+    background: var(--bg-elevated);
+    border-left: 3px solid var(--accent-gold);
+    padding: 0.85rem 1rem;
+    border-radius: 0 8px 8px 0;
+    margin: 0.85rem 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .callout strong {
+    color: var(--text-primary);
+  }
+
+  /* Filter Pills */
+  .act-filters, .tier-filters {
+    display: flex;
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .act-pill, .tier-pill {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.35rem 0.78rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .act-pill:hover, .tier-pill:hover {
+    border-color: var(--text-muted);
+    color: var(--text-primary);
+  }
+
+  .act-pill.active, .tier-pill.active {
+    background: var(--accent-gold);
+    color: #111319;
+    border-color: var(--accent-gold);
+  }
+
+  .gear-group, .bonus-group {
+    margin-bottom: 1rem;
+  }
+
+  .gear-group.hidden, .bonus-group.hidden {
+    display: none;
+  }
+
+  .tier-block {
+    margin-bottom: 1.15rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .tier-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .tier-block.hidden {
+    display: none;
+  }
+
+  .tier-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .tier-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+  }
+
+  .tier-focus {
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .gear-act-title {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-bottom: 0.45rem;
+  }
+
+  .gear-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 7px;
+    background: var(--bg-elevated);
+    margin-bottom: 0.45rem;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .gear-item input[type="checkbox"] {
+    margin-top: 0.25rem;
+    accent-color: var(--accent-gold);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .gear-item.checked {
+    opacity: 0.52;
+    text-decoration: line-through;
+  }
+
+  .gear-text {
+    font-size: 0.89rem;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+
+  .gear-text strong {
+    color: var(--text-primary);
+  }
+
+  .recipient-tag {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 0.1rem 0.45rem;
+    border-radius: 5px;
+    margin-left: 0.35rem;
+    vertical-align: middle;
+  }
+
+  /* Turn Flow Cards */
+  .step-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+  }
+
+  .step-num {
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+  }
+
+  .step-title {
+    font-weight: 700;
+    font-size: 0.96rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .step-desc {
+    font-size: 0.87rem;
+    color: var(--text-secondary);
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: var(--accent-gold);
+  }
+
+  @media (max-width: 640px) {
+    .stat-strip {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .search-box input {
+      width: 100%;
+    }
+    .nav-label {
+      min-width: 100%;
+      margin-bottom: -0.2rem;
+    }
+  }
+
+  /* Mobile & PWA Touch Enhancements */
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-install {
+    background: var(--accent-gold);
+    color: #111319;
+    border-color: var(--accent-gold);
+    font-weight: 700;
+    display: none;
+  }
+
+  .btn-install.visible {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .btn-install:hover {
+    opacity: 0.92;
+    background: var(--accent-gold);
+    color: #111319;
+  }
+
+  /* Sync / Backup Modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 999;
+  }
+
+  .modal-backdrop.open {
+    display: flex;
+  }
+
+  .modal-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    max-width: 520px;
+    width: 100%;
+    padding: 1.35rem;
+    box-shadow: var(--shadow);
+  }
+
+  .modal-box h3 {
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  .modal-box textarea {
+    width: 100%;
+    height: 110px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 0.6rem;
+    font-family: monospace;
+    font-size: 0.8rem;
+    margin: 0.65rem 0;
+    resize: vertical;
+  }
+
+  .modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 1.1rem 1rem 0.95rem;
+    }
+    main {
+      padding: 0 0.9rem;
+      margin-top: 1.1rem;
+    }
+    .title-group h1 {
+      font-size: 1.32rem;
+    }
+    .controls {
+      width: 100%;
+    }
+    .search-box {
+      flex: 1 1 100%;
+    }
+    .search-box input {
+      width: 100%;
+      font-size: 16px; /* Prevents iOS/Android auto-zoom on focus */
+    }
+    .btn {
+      padding: 0.52rem 0.75rem;
+      font-size: 0.82rem;
+    }
+    .nav-row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 0.25rem;
+    }
+    .nav-row::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-label {
+      min-width: auto;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tab-btn {
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 0.55rem 0.85rem;
+    }
+    .gear-item {
+      padding: 0.68rem 0.75rem;
+    }
+    .gear-item input[type="checkbox"] {
+      width: 19px;
+      height: 19px;
+    }
+    .act-pill, .tier-pill {
+      padding: 0.45rem 0.85rem;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="title-group">
+        <h1>Baldur's Gate 3 — DIQ Full Roster &amp; Build Reference</h1>
+        <p>Difficulty, Immersion, Quality Modlist • Expansion Level 13–20 • Gale Origin + All 9 Companions</p>
+      </div>
+      <div class="controls">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search spells, feats, companions..." aria-label="Search guide">
+        </div>
+        <button class="btn" id="viewToggleBtn" title="Toggle between single-tab view and full scrollable page">View: Single Tab</button>
+        <button class="btn" id="themeToggleBtn" title="Switch dark/light theme">Theme: Dark</button>
+        <button class="btn" id="syncModalBtn" title="Export or import checklist progress between devices">Backup / Sync</button>
+        <button class="btn" id="resetAllBtn" title="Clear checked gear and bonus items">Reset</button>
+        <button class="btn btn-install" id="installAppBtn" title="Install as an Android App">Install App</button>
+      </div>
+    </div>
+
+    <nav class="nav-group" role="tablist">
+      <div class="nav-row">
+        <span class="nav-label">Core Squad:</span>
+        <button class="tab-btn active" data-tab="overview" role="tab"><span class="dot dot-gold"></span>Overview &amp; Combat</button>
+        <button class="tab-btn" data-tab="bonuses" role="tab"><span class="dot dot-amber"></span>Permanent Bonuses <span class="count-pill" id="bonusCounter">0 / 14</span></button>
+        <button class="tab-btn" data-tab="gale" role="tab"><span class="dot dot-purple"></span>Gale (Mesmerist 20)</button>
+        <button class="tab-btn" data-tab="laezel" role="tab"><span class="dot dot-crimson"></span>Lae'zel (Paladin / Fighter)</button>
+        <button class="tab-btn" data-tab="shadowheart" role="tab"><span class="dot dot-blue"></span>Shadowheart (Twilight Cleric)</button>
+        <button class="tab-btn" data-tab="astarion" role="tab"><span class="dot dot-emerald"></span>Astarion (Ranger / Rogue)</button>
+      </div>
+      <div class="nav-row">
+        <span class="nav-label">Quest Swaps:</span>
+        <button class="tab-btn" data-tab="wyll" role="tab"><span class="dot dot-indigo"></span>Wyll (Chronurgy Wizard)</button>
+        <button class="tab-btn" data-tab="karlach" role="tab"><span class="dot dot-orange"></span>Karlach (Zealot / Champion)</button>
+        <button class="tab-btn" data-tab="minthara" role="tab"><span class="dot dot-rose"></span>Minthara (Conquest / Sorcerer)</button>
+        <button class="tab-btn" data-tab="halsin" role="tab"><span class="dot dot-teal"></span>Halsin (Moon Druid 20)</button>
+        <button class="tab-btn" data-tab="jaheira" role="tab"><span class="dot dot-lime"></span>Jaheira (Stars Druid / Hunter)</button>
+        <button class="tab-btn" data-tab="minsc" role="tab"><span class="dot dot-sky"></span>Minsc (Hunter / Wildheart)</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ==================== OVERVIEW TAB ==================== -->
+  <section id="tab-overview" class="tab-panel active">
+    <div class="card">
+      <h2>Primary 4-Person Squad &amp; Synergy Matrix</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Slot</th>
+              <th>Character &amp; Build</th>
+              <th>Primary Stats</th>
+              <th>Core Combat &amp; Utility Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Party Face &amp; Control</strong></td>
+              <td><button class="jump-link" data-jump="gale">Gale (Origin)</button> — <em>Vexing Daredevil Mesmerist 20</em></td>
+              <td>DEX / CHA / CON</td>
+              <td>Social face (+½ lvl Deception, free <em>Detect Thoughts</em>), unarmored shield tank, Wisdom-save shredder, &amp; psychic burst striker.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Frontline &amp; Fear Tank</strong></td>
+              <td><button class="jump-link" data-jump="laezel">Lae'zel</button> — <em>Conquest Paladin 12 / Echo Knight 8</em></td>
+              <td>STR / CHA / CON</td>
+              <td>Heavy frontline, AoE Fear lockdown (exploiting Gale's Wisdom-save debuff), save aura, &amp; off-turn <em>Painful Stare</em> trigger.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Divine Support</strong></td>
+              <td><button class="jump-link" data-jump="shadowheart">Shadowheart</button> — <em>Twilight Domain Cleric 20</em></td>
+              <td>WIS / CON / DEX</td>
+              <td>Regenerating temp-HP battery (<em>Twilight Sanctuary</em>) cushioning d8 melee Gale, plus <em>Spirit Guardians</em> for Act 2 undead.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Ranged DPS &amp; Traps</strong></td>
+              <td><button class="jump-link" data-jump="astarion">Astarion</button> — <em>Gloom Stalker 12 / Rogue Fencer 8</em></td>
+              <td>DEX / WIS / CON</td>
+              <td>Sleight of Hand locks/traps, Round 1 alpha strikes (<em>Dread Ambusher</em>), <em>Cunning Strike</em> debuffs, &amp; ranged <em>Painful Stare</em> proc.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Companion Substitution &amp; Quest Swap Matrix</h2>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.65rem;">
+        Whenever you rotate companions into your active party for their personal quests or story beats, use this guide to maintain balanced roles and synergy with Gale:
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Companion &amp; Build</th>
+              <th>Best Slot to Replace</th>
+              <th>Synergy with Gale &amp; Role Coverage in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><button class="jump-link" data-jump="wyll">Wyll</button> — <em>Chronurgy Magic Wizard 20</em></td>
+              <td><strong>Slot 4 (Astarion)</strong> or Slot 3 (Shadowheart)</td>
+              <td><em>Chronal Shift</em> &amp; <em>Convergent Future</em> force bosses to fail Gale's Feints/Spells; supplies <em>Counterspell</em>, <em>Haste</em>, AoE control, and <em>Knock</em> for locked doors/chests.</td>
+            </tr>
+            <tr>
+              <td><button class="jump-link" data-jump="karlach">Karlach</button> — <em>Zealot Barbarian 12 / Champion 8</em></td>
+              <td><strong>Slot 2 (Lae'zel)</strong></td>
+              <td>Unkillable frontline bruiser (<em>Rage Beyond Death</em> + <em>Relentless Rage</em>); <em>Divine Fury</em> radiant damage reliably procs Gale's Reaction <em>Painful Stare</em>.</td>
+            </tr>
+            <tr>
+              <td><button class="jump-link" data-jump="minthara">Minthara</button> — <em>Conquest Paladin 12 / Divine Right Sorcerer 8</em></td>
+              <td><strong>Slot 2 (Lae'zel)</strong></td>
+              <td>Retains full <em>Aura of Conquest</em> 0-speed Fear lockdown while adding <em>Authority</em> (enemies in range have Disadvantage on Enchantment saves) + Quickened <em>Command</em>/<em>Fear</em>.</td>
+            </tr>
+            <tr>
+              <td><button class="jump-link" data-jump="halsin">Halsin</button> — <em>Circle of the Moon Druid 20</em></td>
+              <td><strong>Slot 2 (Lae'zel)</strong> or <strong>Slot 3 (Shadowheart)</strong></td>
+              <td>Massive renewable Wild Shape HP sponge (Owlbear &amp; Elemental Myrmidons) plus full 9th-level Druid healing, <em>Heroes' Feast</em>, and terrain control.</td>
+            </tr>
+            <tr>
+              <td><button class="jump-link" data-jump="jaheira">Jaheira</button> — <em>Circle of Stars Druid 12 / Hunter Ranger 8</em></td>
+              <td><strong>Slot 3 (Shadowheart)</strong> or <strong>Slot 4 (Astarion)</strong></td>
+              <td><em>Starry Form: Dragon</em> guarantees unbreakable Concentration on <em>Sleet Storm</em>/<em>Call Lightning</em>; <em>Cosmic Omen</em> nudges saves, and Urban Tracker covers Sleight of Hand.</td>
+            </tr>
+            <tr>
+              <td><button class="jump-link" data-jump="minsc">Minsc</button> — <em>Hunter Ranger 12 / Wildheart Barbarian 8</em></td>
+              <td><strong>Slot 2 (Lae'zel)</strong></td>
+              <td><strong>Wolf Heart</strong> rage grants <strong>free melee Advantage</strong> to Gale on every adjacent target, while <em>Whirlwind Attack</em> + Reckless Attack clears surrounded packs.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span>Combat Turn Sequence by Level Bracket</span>
+      </h2>
+      <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.85rem;">
+        Select your current party level range to see how your action economy evolves as key subclasses, auras, and <em>Expansion 13–20</em> features come online:
+      </p>
+      <div class="tier-filters" id="combatTierFilters">
+        <button class="tier-pill active" data-tier="t1">Levels 1–4 (Early Survival)</button>
+        <button class="tier-pill" data-tier="t2">Levels 5–8 (Core Spikes)</button>
+        <button class="tier-pill" data-tier="t3">Levels 9–12 (Act 2–3 Transition)</button>
+        <button class="tier-pill" data-tier="t4">Levels 13–20 (Endgame Expansion)</button>
+        <button class="tier-pill" data-tier="all">Show All Brackets</button>
+      </div>
+
+      <!-- TIER 1: LEVELS 1-4 -->
+      <div class="tier-block" data-tier="t1">
+        <div class="tier-header">
+          <span class="tier-title">Levels 1–4 — Foundation, Accuracy &amp; Early Survival</span>
+          <span class="tier-focus">Focus: Cushioning low HP pools, overcoming DIQ's elevated enemy AC, and setting up single-target control.</span>
+        </div>
+        <div class="grid-4">
+          <div class="step-card">
+            <div class="step-num">1 • Support Slot (Shadowheart / Wyll)</div>
+            <div class="step-title">Twilight Sanctuary + Bless</div>
+            <div class="step-desc">Pre-cast <em>Vigilant Blessing</em> on Gale or your frontline. Round 1, activate <strong>Twilight Sanctuary</strong> (refreshing temp HP every turn) and maintain <strong>Bless</strong> so everyone hits through DIQ's early AC buffs.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2 • Ranged / Utility (Astarion / Wyll)</div>
+            <div class="step-title">Dread Ambusher or Chronal Shift</div>
+            <div class="step-desc">Astarion acts first with +WIS Initiative, firing two arrows on Round 1 (<code>+1d8</code> bonus damage). If running Wyll, open with <em>Sleep</em>/<em>Grease</em>/<em>Web</em> and hold <strong>Chronal Shift</strong> to force rerolls on enemy saves.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3 • Gale (Mesmerist 1–4)</div>
+            <div class="step-title">Stare + Feint / Hold Person</div>
+            <div class="step-desc">Wear Light Armor + Shield until Lv 4, then strip armor for <strong>Superior Defense</strong> (20 AC). Apply Bonus Action <strong>Hypnotic Stare</strong> (<code>-2</code> WIS saves), then cast <em>Hold Person</em> (auto-crits!) or use <em>Fateful Feint</em> + strike.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4 • Frontline (Lae'zel / Karlach / Minthara)</div>
+            <div class="step-title">Fear Lockdown or Reckless Fury</div>
+            <div class="step-desc">Lae'zel/Minthara pops <strong>Conquering Presence</strong> (AoE Frighten targeting Gale's lowered Wisdom saves) or Smites a Held target. Karlach rages and triggers <em>Divine Fury</em> radiant damage.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 2: LEVELS 5-8 -->
+      <div class="tier-block hidden" data-tier="t2">
+        <div class="tier-header">
+          <span class="tier-title">Levels 5–8 — Extra Attack, Spirit Guardians &amp; Aura Lockdown</span>
+          <span class="tier-focus">Focus: Freezing Frightened enemies at 0 speed, stacking Radiating Orbs, and unlocking double-burst Painful Stares.</span>
+        </div>
+        <div class="grid-4">
+          <div class="step-card">
+            <div class="step-num">1 • Support (Shadowheart / Halsin / Jaheira)</div>
+            <div class="step-title">Spirit Guardians or Dragon Control</div>
+            <div class="step-desc">Shadowheart flies via <em>Steps of Night</em> with <strong>Spirit Guardians</strong> + <em>Luminous Armor</em>. Halsin shifts into Owlbear; Jaheira activates <em>Starry Form: Dragon</em> for unbreakable <em>Sleet Storm</em> / <em>Call Lightning</em>.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2 • Ranged / Arcane (Astarion / Wyll)</div>
+            <div class="step-title">3-Shot Alpha or Momentary Stasis</div>
+            <div class="step-desc">Astarion fires 3 arrows on Round 1 + <strong>Fencer Cunning Strikes</strong> to Trip/Poison bruisers. Wyll casts <em>Counterspell</em>, <em>Haste</em>, or <strong>Momentary Stasis</strong> to remove a dangerous threat for a full turn.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3 • Gale (Mesmerist 5–8)</div>
+            <div class="step-title">Extra Attack + 2d6 Painful Stare</div>
+            <div class="step-desc">Keep <strong>3+ Panache</strong> banked for Extra Attack (Lv 5). Stare (<code>-3</code> WIS saves at Lv 8), apply <strong>Critical Feint</strong>, strike twice to proc <code>2d6</code> <strong>Painful Stare</strong>, and heal off chip damage via <strong>Critical Restoration</strong> (Lv 8).</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4 • Frontline (Lae'zel / Minthara / Minsc)</div>
+            <div class="step-title">Aura Hard-Lock or Wolf Pack Advantage</div>
+            <div class="step-desc">Lae'zel/Minthara freezes Frightened enemies at <strong>0 speed</strong> inside <em>Aura of Conquest</em>. Minsc activates <strong>Wolf Heart</strong> rage to grant Gale free melee Advantage on every adjacent foe.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 3: LEVELS 9-12 -->
+      <div class="tier-block hidden" data-tier="t3">
+        <div class="tier-header">
+          <span class="tier-title">Levels 9–12 — Resonance Stone, 5+ Panache &amp; Nova Turns</span>
+          <span class="tier-focus">Focus: Doubling psychic burst damage, no-save Crippling Feints, and Action Surge / Quickened nova turns.</span>
+        </div>
+        <div class="grid-4">
+          <div class="step-card">
+            <div class="step-num">1 • Support (Shadowheart / Halsin)</div>
+            <div class="step-title">Heroes' Feast + Myrmidon / Sanctuary</div>
+            <div class="step-desc">Pre-casts <strong>Heroes' Feast</strong> (Lv 11—granting Wisdom save Advantage that neutralizes Gale's <em>Resonance Stone</em> penalty). Halsin unlocks <strong>Elemental Myrmidon</strong> Wild Shapes at Lv 10.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2 • Ranged / Arcane (Astarion / Wyll)</div>
+            <div class="step-title">Risky Ring or Arcane Abeyance</div>
+            <div class="step-desc">Astarion pairs <strong>Risky Ring</strong> Advantage with <em>Iron Mind</em> WIS save proficiency. Wyll uses <strong>Arcane Abeyance</strong> (Lv 10) to hand a second Concentration spell (<em>Haste</em> / <em>Wall of Fire</em>) to a teammate.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3 • Gale (Mesmerist 9–12)</div>
+            <div class="step-title">Crippling Feint + Double Psychic</div>
+            <div class="step-desc">Bank <strong>5+ Panache</strong> for <strong>Evasion, Uncanny Dodge &amp; +1 Reaction</strong>. Use <strong>Crippling Feint</strong> (Lv 11) to Blind/Slow/Silence bosses and trigger <code>3d6</code> <strong>Painful Stare</strong>—doubled to <code>6d6</code> by the <strong>Resonance Stone</strong>!</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4 • Frontline (Lae'zel / Minthara / Karlach)</div>
+            <div class="step-title">Action Surge, Quickened Fear or Relentless</div>
+            <div class="step-desc">Lae'zel pops <strong>Action Surge</strong> + Echo attacks; Minthara uses <em>Band of the Mystic Scoundrel</em> for Bonus Action <em>Fear</em>/<em>Command</em>; Karlach becomes unkillable via <strong>Relentless Rage</strong> (Lv 11).</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 4: LEVELS 13-20 -->
+      <div class="tier-block hidden" data-tier="t4">
+        <div class="tier-header">
+          <span class="tier-title">Levels 13–20 — Manifold Stare, Greater Feints &amp; Endgame Expansion</span>
+          <span class="tier-focus">Focus: Multi-target Wisdom shred, automatic no-save boss lockdowns, and 30+ AC invulnerability.</span>
+        </div>
+        <div class="grid-4">
+          <div class="step-card">
+            <div class="step-num">1 • Support (Shadowheart / Halsin)</div>
+            <div class="step-title">Twilight Shroud or Archdruid</div>
+            <div class="step-desc">Shadowheart's <strong>Twilight Shroud</strong> (Lv 17) adds <strong>+2 AC &amp; DEX saves</strong> inside <em>Twilight Sanctuary</em>. Halsin reaches <strong>Archdruid</strong> (Lv 20) for unlimited Myrmidon Wild Shapes.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2 • Ranged / Arcane (Astarion / Wyll)</div>
+            <div class="step-title">Stalker's Flurry or Convergent Future</div>
+            <div class="step-desc">Astarion rerolls missed Sharpshooter shots via <em>Stalker's Flurry</em> with <code>4d6</code> Sneak Attack. Wyll uses <strong>Convergent Future</strong> (Lv 14+) to force an automatic boss saving throw failure.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3 • Gale (Mesmerist 13–20)</div>
+            <div class="step-title">Manifold Stare &amp; No-Save Feints</div>
+            <div class="step-desc">Maintains <strong>Manifold Stare</strong> (<code>-4</code> WIS saves) on multiple targets at once, triggers free-action <strong>Masterful Feints</strong> (bypassing saves at Greater rank), and deals <code>4d6</code> (<code>8d6</code> w/ Resonance Stone) <em>Painful Stare</em> twice per round.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4 • Frontline (Lae'zel / Karlach / Minsc)</div>
+            <div class="step-title">Shadow Martyr, Rage Beyond Death or Whirlwind</div>
+            <div class="step-desc">Lae'zel intercepts hits via <strong>Shadow Martyr</strong>; Karlach refuses death via <strong>Rage Beyond Death</strong> (Lv 14); Minsc cleaves entire rooms with <strong>Whirlwind Attack</strong> + Reckless Attack.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Gale Origin Setup &amp; Early Respec</h2>
+        <ol class="clean-list">
+          <li><strong>Nautiloid Prologue (15 mins):</strong> Gale starts locked as an Evocation Wizard. Prepare <strong>Friends</strong> and <strong>Charm Person</strong> to pass early dialogue checks on the ship.</li>
+          <li><strong>Unlock Withers at Level 2:</strong> On the beach, recruit Shadowheart and head straight into the <strong>Dank Crypt</strong>. Clear the undead room and open Withers' sarcophagus so he moves to camp.</li>
+          <li><strong>Respec &amp; Racial Passive:</strong> Pay 100g to respec Gale into <strong>Mesmerist</strong> (you can pickpocket the gold right back from Withers). Choose <strong>Hearty</strong> as your Alternate Human passive for an always-on max HP buffer (check the Magic Mirror if locked at creation).</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>How Unarmored Gale Survives Melee in DIQ</h2>
+        <ul class="clean-list">
+          <li><strong>Superior Defense + Shield (Level 4):</strong> Adds <code>DEX + CHA + 1</code> (+1 every 5 levels) to unarmored AC while still allowing Gale's innate Human Shield proficiency. Hits <strong>20 AC at Lv 4</strong> and <strong>26–32 AC</strong> late-game.</li>
+          <li><strong>Parry &amp; Riposte Stance (Level 6):</strong> Cuts incoming attack rolls by <code>1d10 + DEX + CHA</code> (~14–16 penalty) and counterattacks misses.</li>
+          <li><strong>5+ Panache Banking (Level 9):</strong> Keeping 5+ Panache grants <strong>Evasion</strong>, <strong>Uncanny Dodge</strong>, and <strong>+1 Reaction point</strong> so you can proc <em>Painful Stare</em> without losing defensive reactions.</li>
+          <li><strong>Critical Restoration (Level 8):</strong> Heals <code>1d6</code> (+1d6 per 5 levels) on every crit or kill with a light/1H piercing weapon.</li>
+          <li><strong>Shield Gear Rule:</strong> Because you equip a Shield, <strong>skip Bracers of Defence and Bonespike Boots</strong> (both deactivate with a shield).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PERMANENT BONUSES TAB ==================== -->
+  <section id="tab-bonuses" class="tab-panel">
+    <div class="char-banner amber">
+      <div class="char-header">
+        <div class="char-title">Permanent Character &amp; Party Bonuses (Acts 1–3)</div>
+        <span class="char-subtitle badge-amber">Interactive Progression Tracker • Auto-Saved</span>
+      </div>
+      <p style="font-size: 0.92rem; color: var(--text-secondary);">
+        Every permanent stat boost, passive buff, and quest reward across Acts 1–3, assigned to the exact party member who gets the highest tactical return in DIQ. Check items off as you claim them.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>
+        <span>Permanent Bonus Checklist</span>
+      </h2>
+      <div class="act-filters" data-target="bonus-list">
+        <button class="act-pill active" data-act="all">All Acts (14)</button>
+        <button class="act-pill" data-act="act1">Act 1 (7)</button>
+        <button class="act-pill" data-act="act2">Act 2 (3)</button>
+        <button class="act-pill" data-act="act3">Act 3 (4)</button>
+      </div>
+
+      <div id="bonus-list">
+        <!-- ACT 1 BONUSES -->
+        <div class="bonus-group" data-act="act1">
+          <div class="gear-act-title">Act 1 — Wilderness, Underdark &amp; Mountain Pass</div>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-1">
+            <span class="gear-text">
+              <strong>Auntie Ethel's Hair (+1 Permanent Ability Score)</strong> — <em>Sunlit Wetlands (Putrid Bog)</em>
+              <span class="recipient-tag badge-emerald">Astarion (+1 DEX → 18)</span> <span class="recipient-tag badge-orange">or Karlach (+1 STR → 18)</span><br>
+              Evens out Astarion's starting 17 DEX so he can grab <em>Sharpshooter</em> at Level 4 without delaying his 18 DEX modifier (or evens out Karlach's 17 STR if she is your main frontline).
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-2">
+            <span class="gear-text">
+              <strong>Volo's Ersatz Eye (Permanent <em>See Invisibility</em>)</strong> — <em>Camp (after rescuing Volo from Goblin Camp)</em>
+              <span class="recipient-tag badge-purple">Give to Gale</span><br>
+              As your frontline melee controller, passively revealing invisible assassins and stalkers in DIQ prevents surprise ambush crits.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-3">
+            <span class="gear-text">
+              <strong>Loviatar's Love (+2 Attack Rolls &amp; WIS Saves below 30% HP)</strong> — <em>Shattered Sanctum (Abdirak's penance ritual)</em>
+              <span class="recipient-tag badge-purple">Gale</span> <span class="recipient-tag badge-crimson">or Lae'zel / Karlach</span><br>
+              Strip armor before talking to Abdirak and pass the Performance/Intimidation checks for a permanent clutch passive whenever your frontliner drops low.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-4">
+            <span class="gear-text">
+              <strong>Necromancy of Thay — Forbidden Knowledge (+1 WIS Saves &amp; Checks)</strong> — <em>Blighted Village + Whispering Depths</em>
+              <span class="recipient-tag badge-purple">Give to Gale</span><br>
+              Unlock with the <em>Dark Amethyst</em> and pass three Wisdom saves (easy with <em>Towering Ego</em> + <em>Guidance</em>). Required to unlock Act 3's +20 Temp HP reward.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-5">
+            <span class="gear-text">
+              <strong>Awakened (All Illithid Powers become Bonus Actions)</strong> — <em>Crèche Y'llek (Zaith'isk)</em>
+              <span class="recipient-tag badge-purple">Give to Gale</span><br>
+              Put Gale in the Zaith'isk and pass the three saving throws (use Shadowheart's <em>Bless</em> + <em>Guidance</em>). Lets Gale fire <em>Black Hole</em> or <em>Mind Blast</em> as a Bonus Action.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-6">
+            <span class="gear-text">
+              <strong>BOOOAL's Benediction (Advantage vs. Bleeding Targets)</strong> — <em>Festering Cove (Underdark)</em>
+              <span class="recipient-tag badge-gold">Party-Wide</span><br>
+              Have one character start the sacrifice dialogue while another pickpockets the <em>Sickle of BOOOAL</em> from Pooldripp, then spare/recruit the Kuo-toa without losing any companions.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-7">
+            <span class="gear-text">
+              <strong>Brand of the Absolute</strong> — <em>Shattered Sanctum (Priestess Gut)</em>
+              <span class="recipient-tag badge-purple">Gale</span> <span class="recipient-tag badge-crimson">Lae'zel / Minthara</span><br>
+              Zero downside and unlocks bonus effects on Absolute items (such as <em>Gloves of Power</em> or <em>Ring of Absolute Force</em>) through Acts 1 and 2.
+            </span>
+          </label>
+        </div>
+
+        <!-- ACT 2 BONUSES -->
+        <div class="bonus-group" data-act="act2">
+          <div class="gear-act-title">Act 2 — Shadow-Cursed Lands &amp; Moonrise Towers</div>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-8">
+            <span class="gear-text">
+              <strong>Potion of Everlasting Vigour (+2 Permanent Strength)</strong> — <em>Moonrise Towers (Araj Oblodra)</em>
+              <span class="recipient-tag badge-crimson">Lae'zel</span> <span class="recipient-tag badge-orange">or Karlach / Minsc</span><br>
+              Have Astarion bite Araj Oblodra (talk to him afterward at camp to preserve approval) and feed the potion to your primary Strength melee bruiser for permanent 22 STR.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-9">
+            <span class="gear-text">
+              <strong>Githzerai Mind Barrier (Permanent Advantage on Intelligence Saves)</strong> — <em>Mind Flayer Colony (Brain Jar Puzzle)</em>
+              <span class="recipient-tag badge-purple">Give to Gale</span><br>
+              Insert the <em>Waking Mind</em> into the Mind-Archive Interface before the Ketheric fight. Stacks with <em>Towering Ego</em> (+½ CHA to INT saves) and offsets the <em>Resonance Stone</em>'s mental-save penalty.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-10">
+            <span class="gear-text">
+              <strong>Survival Instinct (Bonus Illithid Cheat-Death Power)</strong> — <em>Underdark / Moonrise (Omeluum's Quest)</em>
+              <span class="recipient-tag badge-purple">Give to Gale</span><br>
+              Complete Omeluum's mushroom request in Act 1 (and follow up in Act 2/3) to gain a free 3-turn buffer that heals you for <code>3d4</code> instead of dropping to 0 HP.
+            </span>
+          </label>
+        </div>
+
+        <!-- ACT 3 BONUSES -->
+        <div class="bonus-group" data-act="act3">
+          <div class="gear-act-title">Act 3 — Rivington &amp; Lower City</div>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-11">
+            <span class="gear-text">
+              <strong>Astral-Touched Tadpole (Partial-Illithid Evolution + Free Flight)</strong> — <em>Act 2 → Act 3 Transition</em>
+              <span class="recipient-tag badge-purple">Give to Gale</span><br>
+              Unlocks at-will <strong>Fly</strong> for effortless melee positioning, <strong>Cull the Weak</strong>, Bonus Action <strong>Black Hole</strong> (via <em>Awakened</em>), and <strong>Illithid Expertise</strong> (Expertise in Persuasion, Deception, and Intimidation).
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-12">
+            <span class="gear-text">
+              <strong>Tharchiate Vigour (+20 Temp HP after every Long Rest) &amp; Danse Macabre</strong> — <em>Sorcerous Sundries Vault</em>
+              <span class="recipient-tag badge-purple">Give to Gale</span><br>
+              Read the <em>Tharchiate Codex</em>, remove the curse with Shadowheart's <em>Remove Curse</em>, and finish reading the <em>Necromancy of Thay</em> for a permanent +20 temporary HP buffer every single day.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-13">
+            <span class="gear-text">
+              <strong>Statue of the Hero (Permanent <em>Bless</em> — +1d4 Attack Rolls &amp; Saves)</strong> — <em>Circus of the Last Days (5,000g)</em>
+              <span class="recipient-tag badge-purple">Commission for Gale</span><br>
+              Gives Gale permanent +1d4 to all melee attacks and saving throws without requiring Concentration.
+            </span>
+          </label>
+
+          <label class="gear-item">
+            <input type="checkbox" class="bonus-cb" data-id="bonus-14">
+            <span class="gear-text">
+              <strong>Mirror of Loss (+2 Primary Stat + +1 CHA Patriar's Memory) &amp; Anointed in Splendour (+2 All Saves)</strong> — <em>House of Grief &amp; Stormshore Tabernacle</em>
+              <span class="recipient-tag badge-gold">Entire Party</span><br>
+              <strong>Mirror of Loss:</strong> Gale (+2 CHA + +1 CHA Patriar's Memory → 23 CHA), Frontliner (+2 STR or +2 CHA), Support (+2 WIS or +2 INT), Ranged (+2 DEX). Donate 4,500g at Stormshore Tabernacle for <strong>Anointed in Splendour</strong> (+2 to all saving throws).
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GALE TAB ==================== -->
+  <section id="tab-gale" class="tab-panel">
+    <div class="char-banner purple">
+      <div class="char-header">
+        <div class="char-title">Gale (Origin) — Vexing Daredevil Mesmerist 20</div>
+        <span class="char-subtitle badge-purple">Party Face • Unarmored Shield Duelist • Psychic Controller</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box"><div class="stat-label">STR</div><div class="stat-val">8</div></div>
+        <div class="stat-box primary"><div class="stat-label">DEX</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">CON</div><div class="stat-val">14</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">WIS</div><div class="stat-val">10</div></div>
+        <div class="stat-box primary"><div class="stat-label">CHA</div><div class="stat-val">16</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Human Passive:</strong> Hearty (always-on max HP) &nbsp;|&nbsp;
+        <strong>Skills:</strong> Persuasion (Human), Deception (+½ level from <em>Consummate Liar</em>), Intimidation, Insight &nbsp;|&nbsp;
+        <strong>Panache Rule:</strong> Always keep <strong>3+ Panache</strong> banked for Extra Attack (Lv 5) and <strong>5+ Panache</strong> for Evasion, Uncanny Dodge, and +1 Reaction (Lv 9).
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class Features, Boons &amp; Feats</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–2</td>
+              <td><em>Hypnotic Stare</em> (-2 WIS saves), <em>Consummate Liar</em> (+½ level to Deception), <em>Towering Ego</em> (+CHA to WIS saves, +½ CHA to INT saves)</td>
+              <td>Wear Light Armor + Shield (17 AC) for Levels 1–3. Dominates Deception rolls immediately and hardens mental saves.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 3</td>
+              <td>Subclass: <strong>Aspect of the Daredevil</strong><br>Tier 1 Dazzling Feint: <strong>Fateful Feint</strong></td>
+              <td>Unlocks Daredevil's Panache and Feints. <em>Fateful Feint</em> lets you roll weapon damage twice and take the higher result.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 4</td>
+              <td>Daredevil's Boon: <strong>Superior Defense</strong><br>Feat: <strong>ASI (+2 CHA → 18)</strong></td>
+              <td><strong>Strip off all armor now!</strong> Unarmored AC becomes <code>10 + DEX + CHA + 1</code> (+1 per 5 levels) + Shield = <strong>20 AC</strong> + 3m movement.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 5</td>
+              <td><em>Daredevil's Deeds</em> (Extra Attack at 3+ Panache)<br><em>Penetrating Stare</em></td>
+              <td>Two weapon attacks per action, plus <strong>permanent <em>Detect Thoughts</em> &amp; <em>Speak with Animals</em></strong> (and <em>Speak with Dead</em> via stare).</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 6</td>
+              <td><em>Painful Stare</em> (<code>2d6</code> psychic), <em>Parry and Riposte Stance</em></td>
+              <td>Adds <code>2d6</code> psychic burst once per turn (free on your hit, or Reaction on ally hit) plus melee parry/riposte defense.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 7</td>
+              <td>Tier 2 Dazzling Feint: <strong>Critical Feint</strong></td>
+              <td>Lowers critical hit threshold by <strong>2</strong> (upgrades to <strong>-4</strong> at Improved and <strong>-6</strong> at Greater).</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 8</td>
+              <td>Daredevil's Boon: <strong>Critical Restoration</strong><br>Feat: <strong>ASI (+2 DEX → 18)</strong></td>
+              <td>Crit or kill with a <strong>light or 1H piercing weapon</strong> heals <code>1d6</code> (+1d6 per 5 levels) and lowers crit threshold by <strong>2</strong> in a stance.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 9–10</td>
+              <td><em>Daredevil's Deeds</em> (5+ Panache tier)<br><em>Penetrating Stare</em> (Darkvision / Blindness Immunity)</td>
+              <td>At 5+ Panache, gains <strong>Evasion, Uncanny Dodge, and +1 Reaction</strong>. Also becomes immune to Blindness and sees in magical darkness.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 11</td>
+              <td>Tier 3 Dazzling Feint: <strong>Crippling Feint</strong></td>
+              <td>Inflicts <strong>Blinded, Slowed, and Silenced</strong> for 2 rounds; at Greater rank it <strong>bypasses saving throws completely</strong>.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 12</td>
+              <td><em>Painful Stare</em> (<code>3d6</code> psychic)<br>Feat: <strong>ASI (+2 CHA → 20)</strong></td>
+              <td>Caps primary save DC, Deception bonus, Wisdom save bonus, and unarmored AC scaling.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 13–15</td>
+              <td><em>Manifold Stare</em>, <em>Masterful Feint</em> upgrades</td>
+              <td>Maintain <em>Hypnotic Stare</em> on multiple enemies at once and trigger Feints as free actions.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 16</td>
+              <td>Daredevil's Boon: <strong>Grounded Stance</strong><br>Feat: <strong>ASI (+2 DEX → 20)</strong></td>
+              <td>Maxes Dexterity for hit chance, initiative, and unarmored AC (reaching 30+ AC with endgame gear).</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 17–20</td>
+              <td><em>Painful Stare</em> (<code>4d6</code> psychic), Greater Dazzling Feint upgrades<br>Level 20 Feat: <strong>ASI (+2 CHA → 22) or Tough / Alert</strong></td>
+              <td><strong>Option A (Pure 20):</strong> Automatic, no-save Greater Feint lockdowns on bosses.<br><strong>Option B (Multiclass):</strong> <em>Mesmerist 12 / Paladin 2 / Swords Bard 6</em> for Divine Smites &amp; Flourishes on crit-fishing strikes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Priority Spells</h2>
+        <ul class="clean-list">
+          <li><strong>Level 1:</strong> <em>Charm Person</em>, <em>Command</em> (via feats/items), <em>Illusory Script / Disguise Self</em>.</li>
+          <li><strong>Level 2:</strong> <strong>Mirror Image</strong> (no concentration; stacks +9/+6/+3 AC on top of 22+ unarmored AC), <strong>Blur</strong> (enemies roll with Disadvantage), <strong>Hold Person</strong> (auto-crits for <em>Critical Restoration</em>).</li>
+          <li><strong>Level 3:</strong> <strong>Confusion</strong> (devastating after <em>Hypnotic Stare</em>), <em>Fear</em>, <em>Bestow Curse</em>.</li>
+          <li><strong>Level 4:</strong> <strong>Greater Invisibility</strong> (high Stealth/DEX keeps you unseen mid-combat), <em>Phantasmal Killer</em>.</li>
+          <li><strong>Level 5+:</strong> <strong>Hold Monster</strong>, <strong>Dominate Person</strong>, <em>Synaptic Static</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="callout">
+          <strong>Weapon Rule:</strong> Must be a <strong>Light or 1-Handed Piercing</strong> weapon (Shortsword, Dagger, Rapier) so <em>Critical Restoration</em> triggers. Keep body slot unarmored (Clothing/Robes only).
+        </div>
+        <div class="act-filters" data-target="gale-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act1">Act 1</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="gale-gear">
+          <div class="gear-group" data-act="act1">
+            <div class="gear-act-title">Act 1</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-1"><span class="gear-text"><strong>Knife of the Undermountain King</strong> (Crèche Y'llek) — Lowers crit range by 1 &amp; rerolls low damage dice.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-2"><span class="gear-text"><strong>Safeguard Shield</strong> (Dammon, Grove) — +2 AC and +1 to all saving throws.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-3"><span class="gear-text"><strong>The Protecty Sparkswall</strong> (Grymforge) — Clothing slot (+1 AC &amp; +1 Spell Save DC).</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-4"><span class="gear-text"><strong>Ring of Protection &amp; Cloak of Protection</strong> — +1 AC and +1 to all saving throws each.</span></label>
+          </div>
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-5"><span class="gear-text"><strong>Resonance Stone</strong> (Mind Flayer Colony) — Must-have! Doubles all nearby Psychic damage (<em>Painful Stare</em>); mental save penalty is offset by <em>Towering Ego</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-6"><span class="gear-text"><strong>Sentinel Shield</strong> (Lann Tarv, Moonrise) — +2 AC, +3 Initiative, Advantage on Perception.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-7"><span class="gear-text"><strong>Potent Robe</strong> (Alfira reward) — +1 AC and +5 temporary HP at the start of every turn.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-8"><span class="gear-text"><strong>Evasive Shoes</strong> (Mattis, Last Light) — +1 AC and +1 Acrobatics (shield-compatible).</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-9"><span class="gear-text"><strong>Crimson Mischief + Viconia's Walking Fortress</strong> (Orin / House of Grief) — +3 Shield with spell-save Advantage, or use <strong>Duelist's Prerogative</strong> with an empty off-hand.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-10"><span class="gear-text"><strong>Robe of Supreme Defences</strong> (Ferg Drogher, Rivington) — +1 AC and adds +CHA a second time to all saves while concentrating.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="gale-11"><span class="gear-text"><strong>Helm of Balduran</strong> (Wyrmway) — +1 AC, +1 saves, immunity to critical hits, and 2 HP regen per turn.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LAE'ZEL TAB ==================== -->
+  <section id="tab-laezel" class="tab-panel">
+    <div class="char-banner crimson">
+      <div class="char-header">
+        <div class="char-title">Lae'zel — Conquest Paladin 12 / Echo Knight Fighter 8</div>
+        <span class="char-subtitle badge-crimson">Heavy Frontline • AoE Fear Lockdown • Save Aura</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box primary"><div class="stat-label">STR</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">DEX</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">CON</div><div class="stat-val">14</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">8</div></div>
+        <div class="stat-box"><div class="stat-label">WIS</div><div class="stat-val">10</div></div>
+        <div class="stat-box primary"><div class="stat-label">CHA</div><div class="stat-val">16</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Skills:</strong> Athletics, Intimidation, Persuasion, Perception &nbsp;|&nbsp;
+        <strong>Core Combo:</strong> Gale's <em>Hypnotic Stare</em> shreds enemy Wisdom saves, allowing Lae'zel's <strong>Conquering Presence</strong> and <strong>Fear</strong> to freeze enemies at 0 movement speed inside <em>Aura of Conquest</em>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–4</td>
+              <td><strong>Conquest Paladin 1–4:</strong> Fighting Style (<em>Defense</em>), <em>Conquering Presence</em> (Channel Oath AoE Frighten), <strong>ASI (+2 STR → 18)</strong> at Lv 4</td>
+              <td>Heavy armor frontline tank; <em>Conquering Presence</em> locks down melee packs that Gale has stared.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 5–7</td>
+              <td><strong>Conquest Paladin 5–7:</strong> Extra Attack (Lv 5), <em>Aura of Protection</em> (Lv 6), <em>Aura of Conquest</em> (Lv 7)</td>
+              <td><em>Aura of Protection</em> adds +CHA to all nearby allies' saves (stacking with Gale's <em>Towering Ego</em>). <em>Aura of Conquest</em> reduces Frightened enemies' speed to 0 and deals psychic damage.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 8–11</td>
+              <td><strong>Echo Knight Fighter 1–4:</strong> Fighting Style (<em>Great Weapon Fighting</em> or <em>Dueling</em>), <em>Action Surge</em>, <em>Manifest Echo</em> + <em>Unleash Incarnation</em>, <strong>ASI (+2 STR → 20)</strong> at Fighter 4</td>
+              <td>Adds <em>Action Surge</em> nova turns and an expendable melee Echo to threaten backline casters without leaving Gale's side.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 12–16</td>
+              <td><strong>Conquest Paladin 8–12:</strong> <strong>ASI (+2 CHA → 18)</strong> at Pal 8, <em>Fear</em> spell at Pal 9, <em>Aura of Courage</em> at Pal 10, <em>Improved Divine Smite</em> (<code>+1d8</code> radiant/hit) at Pal 11, <strong>Feat: Alert</strong> at Pal 12</td>
+              <td>Unlocks 3rd-level <em>Fear</em>, permanent radiant damage on every swing, and early turn order via <em>Alert</em>.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 17–20</td>
+              <td><strong>Echo Knight Fighter 5–8:</strong> Fighter 6 <strong>ASI (+2 CHA → 20)</strong>, <em>Shadow Martyr</em> at Fighter 7, Fighter 8 <strong>Feat: Savage Attacker or Tough</strong></td>
+              <td>Caps Aura &amp; Fear DC at 20 CHA. <em>Shadow Martyr</em> lets Lae'zel's Echo intercept attacks aimed at Gale.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Priority Spells &amp; Smite Usage</h2>
+        <ul class="clean-list">
+          <li><strong>Wrathful Smite (Lv 1):</strong> Uses a Wisdom save to Frighten—devastating on a target under Gale's <em>Hypnotic Stare</em>.</li>
+          <li><strong>Command (Lv 1):</strong> Force bosses to drop weapons or grovel (Wisdom save).</li>
+          <li><strong>Armor of Agathys (Lv 1–3):</strong> Upcast for temporary HP and cold retaliation damage.</li>
+          <li><strong>Fear (Lv 3):</strong> AoE cone that forces enemies to drop weapons and freeze at 0 speed in your aura.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="laezel-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act1">Act 1</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="laezel-gear">
+          <div class="gear-group" data-act="act1">
+            <div class="gear-act-title">Act 1</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-1"><span class="gear-text"><strong>Sword of Justice</strong> (Anders, Risen Road) or <strong>Everburn Blade</strong> — Reliable early 2H damage + <em>Tyr's Protection</em> (+2 AC).</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-2"><span class="gear-text"><strong>Adamantine Splint Armor</strong> (Grymforge) — 18 AC, -2 incoming damage, and immunity to critical hits.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-3"><span class="gear-text"><strong>Boots of Speed</strong> (Thulla, Underdark) — Bonus action Dash to keep pace with unarmored Gale.</span></label>
+          </div>
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-4"><span class="gear-text"><strong>Halberd of Vigilance</strong> (Lann Tarv, Moonrise) — +2 weapon, +1 Initiative, Advantage on Perception &amp; reaction attacks.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-5"><span class="gear-text"><strong>Ring of Free Action</strong> (Araj Oblodra, Moonrise) — Immunity to paralysis and difficult terrain.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-6"><span class="gear-text"><strong>Killer's Sweetheart</strong> (Gauntlet of Shar) — Bank a guaranteed critical hit once per Long Rest for a massive Divine Smite.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-7"><span class="gear-text"><strong>Balduran's Giantslayer</strong> (Wyrmway) — Doubles Strength modifier on damage and grants <em>Giant Form</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-8"><span class="gear-text"><strong>Armor of Persistence</strong> (Dammon, Lower City) — 20 AC with permanent <em>Blade Ward</em> and <em>Resistance</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="laezel-9"><span class="gear-text"><strong>Gauntlets of Hill Giant Strength</strong> (House of Hope) — Optional if you want to dump STR for higher CON/CHA after claiming <em>Everlasting Vigour</em>.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SHADOWHEART TAB ==================== -->
+  <section id="tab-shadowheart" class="tab-panel">
+    <div class="char-banner blue">
+      <div class="char-header">
+        <div class="char-title">Shadowheart — Twilight Domain Cleric 20</div>
+        <span class="char-subtitle badge-blue">Temp-HP Battery • Radiant Undead Clear • Party Buffer</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box"><div class="stat-label">STR</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">DEX</div><div class="stat-val">14</div></div>
+        <div class="stat-box primary"><div class="stat-label">CON</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">8</div></div>
+        <div class="stat-box primary"><div class="stat-label">WIS</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">CHA</div><div class="stat-val">10</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Skills:</strong> Insight, Religion, Medicine, Perception &nbsp;|&nbsp;
+        <strong>Core Role:</strong> <em>Twilight Sanctuary</em> refreshes temporary HP every turn to protect d8 melee Gale, while <em>Spirit Guardians</em> carries Act 2's mind-immune undead fights.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–4</td>
+              <td><strong>Twilight Cleric 1–4:</strong> Heavy Armor, <em>Eyes of Night</em> (300ft darkvision), <em>Vigilant Blessing</em>, <em>Twilight Sanctuary</em> (Lv 2), <strong>Feat: Resilient (Constitution) or War Caster</strong> at Lv 4</td>
+              <td>Pre-cast <em>Vigilant Blessing</em> for Initiative Advantage. <em>Twilight Sanctuary</em> blankets the squad in regenerating temp HP and cleanses Charmed/Frightened.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 5–8</td>
+              <td><strong>Twilight Cleric 5–8:</strong> <em>Spirit Guardians</em> (Lv 5), <em>Steps of Night</em> (bonus-action flight in dim light/darkness at Lv 6), <strong>ASI (+2 WIS → 18)</strong> at Lv 8, <em>Divine Strike</em> (<code>1d8</code> radiant)</td>
+              <td><em>Spirit Guardians</em> + <em>Steps of Night</em> lets Shadowheart fly across the battlefield applying Radiating Orbs to every enemy.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 9–12</td>
+              <td><strong>Twilight Cleric 9–12:</strong> <em>Destructive Wave</em>, <em>Heroes' Feast</em> (Lv 11), <strong>ASI (+2 WIS → 20)</strong> at Lv 12</td>
+              <td><em>Heroes' Feast</em> grants +12 max HP, Wisdom save Advantage, and immunity to Poison/Disease/Frightened to the entire party.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 13–20</td>
+              <td><strong>Twilight Cleric 13–20:</strong> <em>Regenerate</em>, <em>Holy Aura</em>, <em>Mass Heal</em>, <em>Twilight Shroud</em> (Lv 17: +2 AC &amp; DEX saves inside <em>Twilight Sanctuary</em>), <strong>Feats: Alert</strong> (Lv 16) &amp; <strong>War Caster / Tough</strong> (Lv 19)</td>
+              <td>Endgame invulnerability engine: +2 AC from <em>Twilight Shroud</em> stacks directly onto Gale's 30+ unarmored AC.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Priority Spells &amp; Buff Routine</h2>
+        <ul class="clean-list">
+          <li><strong>Out of Combat (After Long Rest):</strong> Cast <em>Aid</em> (upcast to highest spare slot), <em>Heroes' Feast</em> (Lv 11+), and <em>Vigilant Blessing</em> on Gale or Lae'zel.</li>
+          <li><strong>Early Game Concentration:</strong> <em>Bless</em> (keeps Gale, Lae'zel, and Astarion hitting through DIQ's elevated enemy AC).</li>
+          <li><strong>Mid/Late Game Concentration:</strong> <em>Spirit Guardians</em> (Radiant) for melee/undead control, or <em>Holy Aura</em> (Lv 15+) against spell-heavy bosses.</li>
+          <li><strong>Emergency Healing:</strong> <em>Mass Healing Word</em> (Bonus Action) triggers <em>The Whispering Promise</em> to apply party-wide <em>Bless</em> without concentration.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="shart-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act1">Act 1</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="shart-gear">
+          <div class="gear-group" data-act="act1">
+            <div class="gear-act-title">Act 1</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-1"><span class="gear-text"><strong>Phalar Aluve</strong> (Underdark) — <em>Shriek</em> aura stacks an extra -1d4 saving throw penalty on top of Gale's <em>Hypnotic Stare</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-2"><span class="gear-text"><strong>Luminous Armor</strong> (Selûnite Outpost) — Radiating Orb shockwaves whenever you deal radiant damage.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-3"><span class="gear-text"><strong>The Whispering Promise</strong> (Volo / Grat) — Applies 2-turn concentration-free <em>Bless</em> whenever you heal an ally.</span></label>
+          </div>
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-4"><span class="gear-text"><strong>The Blood of Lathander</strong> (Rosymorn Monastery) — Blinds nearby undead/fiends and prevents lethal downing once per Long Rest.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-5"><span class="gear-text"><strong>Boots of Stormy Clamour</strong> (Omeluum) — Inflicts Reverberation whenever you apply a condition (Radiating Orb).</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-6"><span class="gear-text"><strong>Coruscation Ring</strong> (Last Light Inn) — Adds Radiating Orbs on every spell hit while illuminated.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-7"><span class="gear-text"><strong>Amulet of the Devout</strong> (Stormshore Tabernacle) — +2 Spell Save DC and an extra Channel Divinity charge (extra <em>Twilight Sanctuary</em>).</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-8"><span class="gear-text"><strong>Viconia's Walking Fortress / Ketheric's Shield</strong> — High AC + spell-save bonuses (give whichever Gale isn't holding).</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="shart-9"><span class="gear-text"><strong>Helldusk Armor</strong> (House of Hope) — 21 AC + Flight + Burn immunity, or keep <em>Luminous Armor</em> for orb stacking.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ASTARION TAB ==================== -->
+  <section id="tab-astarion" class="tab-panel">
+    <div class="char-banner emerald">
+      <div class="char-header">
+        <div class="char-title">Astarion — Gloom Stalker Ranger 12 / Rogue Fencer 8</div>
+        <span class="char-subtitle badge-emerald">Locks &amp; Traps • Round 1 Alpha Sniper • Cunning Strike</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box"><div class="stat-label">STR</div><div class="stat-val">8</div></div>
+        <div class="stat-box primary"><div class="stat-label">DEX</div><div class="stat-val">17</div></div>
+        <div class="stat-box"><div class="stat-label">CON</div><div class="stat-val">14</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">8</div></div>
+        <div class="stat-box primary"><div class="stat-label">WIS</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">CHA</div><div class="stat-val">10</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Stat Note:</strong> Claim Auntie Ethel's Hair (+1 DEX → 18) so you can take <em>Sharpshooter</em> at Lv 4 &nbsp;|&nbsp;
+        <strong>Expertise:</strong> Sleight of Hand, Stealth &nbsp;|&nbsp;
+        <strong>Skills:</strong> Perception, Acrobatics.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–5</td>
+              <td><strong>Gloom Stalker Ranger 1–5:</strong> <em>Archery</em> Fighting Style, <em>Dread Ambusher</em> (+WIS to Initiative, extra Round 1 attack with <code>+1d8</code> damage), <em>Umbral Shroud</em>, <strong>Feat: Sharpshooter</strong> at Lv 4, Extra Attack at Lv 5</td>
+              <td>Acts first in nearly every encounter, firing 3–4 Sharpshooter arrows on Round 1 to delete backline mages before they act.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 6–9</td>
+              <td><strong>Rogue Fencer 1–4:</strong> Sneak Attack (<code>2d6</code>), <strong>Expertise (Sleight of Hand &amp; Stealth)</strong>, <em>Cunning Action</em>, <em>Fencer</em> subclass (<em>Cunning Strike</em> debuffs &amp; precision strikes), <strong>ASI (+2 DEX → 20)</strong> at Rogue 4</td>
+              <td>Solves every lock and trap in DIQ while adding Sneak Attack + <em>Cunning Strike</em> riders (Trip, Poison, Withdraw) onto ranged/finesse attacks.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 10–16</td>
+              <td><strong>Gloom Stalker Ranger 6–12:</strong> <em>Iron Mind</em> (WIS save proficiency) at Ranger 7, <strong>Feat: Alert</strong> at Ranger 8, <em>Lightning Arrow</em>, <em>Stalker's Flurry</em> (reroll one missed attack per turn) at Ranger 11, <strong>ASI (+2 WIS → 18)</strong> at Ranger 12</td>
+              <td><em>Stalker's Flurry</em> negates Sharpshooter's -5 accuracy penalty, while <em>Iron Mind</em> protects Astarion from enemy mind control.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 17–20</td>
+              <td><strong>Rogue Fencer 5–8:</strong> <em>Uncanny Dodge</em>, Sneak Attack (<code>4d6</code>), <em>Evasion</em> at Rogue 7, <strong>ASI (+2 WIS → 20 or Tough)</strong> at Rogue 8</td>
+              <td>Full evasion/mitigation suite alongside <code>4d6</code> Sneak Attack every round.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Key Combat &amp; Utility Tactics</h2>
+        <ul class="clean-list">
+          <li><strong>Triggering Gale's Stare:</strong> Whenever Gale applies <em>Hypnotic Stare</em> to a boss on Round 1, Astarion's arrows can immediately trigger Gale's Reaction <em>Painful Stare</em> if Gale wants to save his own turn's burst for a second target.</li>
+          <li><strong>Titanstring + Strength Club:</strong> Equipping <em>Titanstring Bow</em> alongside the <em>Club of Hill Giant Strength</em> in your melee off-hand adds +4 flat damage to every single arrow.</li>
+          <li><strong>Risky Ring Synergy:</strong> Equipping the <em>Risky Ring</em> in Act 2 gives permanent Advantage on every attack (enabling Sneak Attack without hiding), while <em>Iron Mind</em> (WIS save proficiency) offsets its saving throw penalty.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="astarion-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act1">Act 1</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="astarion-gear">
+          <div class="gear-group" data-act="act1">
+            <div class="gear-act-title">Act 1</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-1"><span class="gear-text"><strong>Titanstring Bow</strong> (Brem, Zhentarim Hideout) — Adds STR modifier to ranged damage.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-2"><span class="gear-text"><strong>Club of Hill Giant Strength</strong> (Arcane Tower, Underdark) — Off-hand stat stick setting STR to 19 (+4 Titanstring damage).</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-3"><span class="gear-text"><strong>Gloves of Archery &amp; Caustic Band</strong> — +2 ranged damage and +2 acid damage on every arrow.</span></label>
+          </div>
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-4"><span class="gear-text"><strong>Yuan-Ti Scale Mail</strong> (Talli, Last Light Inn) — Medium armor adding your full +5 DEX modifier to AC.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-5"><span class="gear-text"><strong>Risky Ring</strong> (Araj Oblodra, Moonrise) — Permanent Advantage on all attacks for effortless Sharpshooter &amp; Sneak Attack hits.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-6"><span class="gear-text"><strong>Surgeon's Subjugation Amulet</strong> (House of Healing) — Paralyze a humanoid on a critical hit once per Long Rest.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-7"><span class="gear-text"><strong>Gontr Mael</strong> (Steel Watch Foundry) or <strong>The Dead Shot</strong> (Stormshore Armoury) — Top-tier endgame bows (<em>Dead Shot</em> doubles proficiency bonus to hit).</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-8"><span class="gear-text"><strong>Rhapsody + Ambusher</strong> (Cazador's Palace / Rivington) — Melee stat sticks adding up to +3 attack/damage and +1d6 necrotic on Round 1.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="ast-9"><span class="gear-text"><strong>Armor of Agility &amp; Legacy of the Masters</strong> — 22+ AC medium armor + +2 attack/damage gloves.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WYLL TAB ==================== -->
+  <section id="tab-wyll" class="tab-panel">
+    <div class="char-banner indigo">
+      <div class="char-header">
+        <div class="char-title">Wyll — Chronurgy Magic Wizard 20</div>
+        <span class="char-subtitle badge-indigo">Arcane Controller • Save Reroller • Counterspell &amp; AoE</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box"><div class="stat-label">STR</div><div class="stat-val">8</div></div>
+        <div class="stat-box"><div class="stat-label">DEX</div><div class="stat-val">14</div></div>
+        <div class="stat-box primary"><div class="stat-label">CON</div><div class="stat-val">16</div></div>
+        <div class="stat-box primary"><div class="stat-label">INT</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">WIS</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">CHA</div><div class="stat-val">10</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Best Swap For:</strong> Slot 4 (Astarion) when you want heavy arcane AoE, <em>Counterspell</em>, and <em>Haste</em> &nbsp;|&nbsp;
+        <strong>Human Perks:</strong> Shield proficiency + <em>Mage Armor</em> = 19+ AC &nbsp;|&nbsp;
+        <strong>Skills:</strong> Arcana (Wizard Scholar Expertise), History, Investigation, Persuasion.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–4</td>
+              <td><strong>Chronurgy Wizard 1–4:</strong> <em>Chronal Shift</em> (2/day reaction reroll on any attack, check, or saving throw), <em>Temporal Awareness</em> (+INT to Initiative), <em>Wizard Scholar</em> (Arcana Expertise), <strong>Feat: Resilient (Constitution)</strong> at Lv 4</td>
+              <td>Forces enemies to reroll whenever they pass a save against Gale's <em>Hold Person</em>/<em>Fear</em>, while <em>Resilient (CON)</em> protects Concentration.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 5–8</td>
+              <td><strong>Chronurgy Wizard 5–8:</strong> <em>Counterspell</em>, <em>Haste</em>, <em>Sleet Storm</em>, <em>Momentary Stasis</em> (Lv 6: Action to incapacitate a creature in a temporal field for 1 turn), <strong>ASI (+2 INT → 18)</strong> at Lv 8</td>
+              <td><em>Momentary Stasis</em> removes a dangerous DIQ boss or elite add for a full round without needing Concentration.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 9–12</td>
+              <td><strong>Chronurgy Wizard 9–12:</strong> <em>Wall of Force</em>, <em>Arcane Abeyance</em> (Lv 10: condense a Lv 1–4 spell into a bead any ally can cast &amp; concentrate on!), <strong>ASI (+2 INT → 20)</strong> at Lv 12</td>
+              <td><strong>Huge Synergy:</strong> Hand a bead of <em>Haste</em> or <em>Wall of Fire</em> to Lae'zel or Astarion so your squad maintains two Concentration spells at once.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 13–20</td>
+              <td><strong>Chronurgy Wizard 13–20:</strong> <em>Convergent Future</em> (Lv 14: reaction to turn any d20 roll into an automatic success or failure!), <em>Globe of Invulnerability</em>, <em>Wish / Meteor Swarm</em>, <strong>Feats: Alert</strong> (Lv 16) &amp; <strong>War Caster / Tough</strong> (Lv 19)</td>
+              <td><em>Convergent Future</em> guarantees that Gale's <em>Dominate Person</em> or <em>Hold Monster</em> lands on Act 3 bosses regardless of their legendary resistances.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Priority Spells &amp; Lock Utility</h2>
+        <ul class="clean-list">
+          <li><strong>Lockpicking Replacement:</strong> Keep <strong>Knock</strong> (Lv 2) prepared whenever Wyll replaces Astarion—opens any chest or door in the game automatically.</li>
+          <li><strong>Battlefield Control:</strong> <em>Grease</em>, <em>Web</em>, <em>Sleet Storm</em> (devastates caster groups), <em>Wall of Fire</em>, <em>Wall of Force</em>.</li>
+          <li><strong>Party Multipliers:</strong> <em>Counterspell</em>, <em>Haste</em> (cast via <em>Arcane Abeyance</em> onto Gale or Lae'zel), <em>Globe of Invulnerability</em> (essential for DIQ Act 3 boss fights).</li>
+          <li><strong>Burst AoE:</strong> <em>Fireball</em>, <em>Lightning Bolt</em>, <em>Cone of Cold</em>, <em>Chain Lightning</em>.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="wyll-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act1">Act 1</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="wyll-gear">
+          <div class="gear-group" data-act="act1">
+            <div class="gear-act-title">Act 1</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-1"><span class="gear-text"><strong>The Spellsparkler</strong> (Waukeen's Rest) or <strong>Melf's First Staff</strong> — Early Spell Attack &amp; Save DC boost.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-2"><span class="gear-text"><strong>Safeguard Shield / Glowing Shield</strong> — Human proficiency lets Wyll hold a +2 AC Shield alongside <em>Mage Armor</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-3"><span class="gear-text"><strong>Psychic Spark</strong> (Blurg, Underdark) — Extra <em>Magic Missile</em> dart for breaking enemy Concentration.</span></label>
+          </div>
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-4"><span class="gear-text"><strong>Robe of Exquisite Focus</strong> (Araj Oblodra, Moonrise) — +1 Spell Save DC and +1 AC.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-5"><span class="gear-text"><strong>Hat of Fire Acuity</strong> (Strange Ox, Last Light) — Casting <em>Scorching Ray</em> stacks +8–10 Arcane Acuity for unsaveable follow-up control spells.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-6"><span class="gear-text"><strong>Sentinel Shield</strong> (Lann Tarv, Moonrise) — +2 AC and +3 Initiative on top of <em>Temporal Awareness</em>.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-7"><span class="gear-text"><strong>Markoheshkir</strong> (Ramazith's Tower) — +1 Spell Save DC, free 6th-level cast, and elemental lightning/ice favor.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-8"><span class="gear-text"><strong>Robe of the Weave &amp; Hood of the Weave</strong> — +3 combined Spell Save DC &amp; Spell Attack rolls.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="wyll-9"><span class="gear-text"><strong>Ketheric's Shield</strong> — +2 AC and +1 Spell Save DC / Spell Attack rolls.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KARLACH TAB ==================== -->
+  <section id="tab-karlach" class="tab-panel">
+    <div class="char-banner orange">
+      <div class="char-header">
+        <div class="char-title">Karlach — Path of the Zealot Barbarian 12 / Champion Fighter 8</div>
+        <span class="char-subtitle badge-orange">Unkillable Frontline • Radiant Fury • PHB 2024 Crit Engine</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box primary"><div class="stat-label">STR</div><div class="stat-val">17</div></div>
+        <div class="stat-box"><div class="stat-label">DEX</div><div class="stat-val">14</div></div>
+        <div class="stat-box primary"><div class="stat-label">CON</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">8</div></div>
+        <div class="stat-box"><div class="stat-label">WIS</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">CHA</div><div class="stat-val">8</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Best Swap For:</strong> Slot 2 (Lae'zel) &nbsp;|&nbsp;
+        <strong>Stat Note:</strong> Use <em>Tavern Brawler</em> (+1 STR → 18) or Auntie Ethel's Hair (+1 STR → 18) + <em>Everlasting Vigour</em> (+2 STR) &nbsp;|&nbsp;
+        <strong>Mod Synergy:</strong> Uses <em>Goon's Barbarian Overhaul</em>, <em>OneDnD Short Rest Rage Recovery</em>, and <em>Champion Fighter PHB 2024</em>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–4</td>
+              <td><strong>Zealot Barbarian 1–4:</strong> <em>Rage</em> (Short Rest recovery via UA8 mod), <em>Reckless Attack</em>, <em>Divine Fury</em> (<code>1d6 + ½ level</code> radiant/necrotic on first hit each turn), <strong>Feat: Great Weapon Master</strong> at Lv 4</td>
+              <td>Reckless Attack offsets GWM's -5 penalty, while <em>Divine Fury</em> radiant damage reliably triggers Gale's Reaction <em>Painful Stare</em>.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 5–8</td>
+              <td><strong>Zealot Barbarian 5–8:</strong> Extra Attack, <em>Fast Movement</em>, <em>Fanatical Focus</em> (reroll failed save once per Rage), <em>Feral Instinct</em> (+3 Initiative, surprise immunity), <strong>ASI (+2 STR → 19/20)</strong> at Lv 8</td>
+              <td>Acts early alongside Gale and shrugs off DIQ's harsh crowd-control spells via <em>Fanatical Focus</em>.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 9–12</td>
+              <td><strong>Zealot Barbarian 9–12:</strong> <em>Brutal Critical</em>, <em>Zealous Presence</em> (Lv 10: Bonus Action party-wide Advantage on attacks &amp; saves for 1 round!), <em>Relentless Rage</em> (Lv 11: drop to 1 HP instead of 0), <strong>ASI (+2 STR → 20 or +2 CON)</strong> at Lv 12</td>
+              <td><em>Zealous Presence</em> gives Gale and the entire squad free Advantage on both attacks and saving throws during boss burst turns.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 13–20</td>
+              <td><strong>Champion Fighter (PHB 2024) 1–8:</strong> <em>Great Weapon Fighting</em>, <em>Improved Critical</em> (19–20 crit range), <em>Action Surge</em>, <em>Heroic Warrior</em> (free Heroic Inspiration every turn in combat!), <strong>Feats: Savage Attacker</strong> (Lv 16), <strong>Alert</strong> (Lv 18), <strong>Tough</strong> (Lv 20)</td>
+              <td>PHB 2024 <em>Heroic Warrior</em> grants free d20 rerolls every single turn while <em>Action Surge</em> + expanded crits shred DIQ's highest-HP bosses.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Key Combat Tactics</h2>
+        <ul class="clean-list">
+          <li><strong>Soul Coins:</strong> Feed Karlach Soul Coins before major DIQ boss fights—whenever she Rages or drops below 25% HP, every unarmed or melee weapon hit adds <code>1d4</code>–<code>2d4</code> fire damage.</li>
+          <li><strong>Short Rest Rage Loop:</strong> With <em>OneDnD UA8 Barbarian Short Rest Rage Recovery</em> in your modlist, Karlach recovers Rage charges on Short Rests, letting her Rage in virtually every encounter.</li>
+          <li><strong>Gale Synergy:</strong> Have Karlach dive alongside Gale—her <em>Zealous Presence</em> (Lv 10) gives Gale free Advantage on his <em>Dazzling Feint</em> attacks without needing to spend resources.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="karlach-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act1">Act 1</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="karlach-gear">
+          <div class="gear-group" data-act="act1">
+            <div class="gear-act-title">Act 1</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-1"><span class="gear-text"><strong>Everburn Blade / Sword of Justice</strong> — Heavy 2H damage for Great Weapon Master + Reckless Attack.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-2"><span class="gear-text"><strong>Gloves of the Growling Underdog</strong> (Shattered Sanctum) — Advantage in melee when surrounded by 2+ foes.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-3"><span class="gear-text"><strong>Bloodguzzler Garb / Adamantine Scale Mail</strong> — Medium armor works with Rage while keeping AC high.</span></label>
+          </div>
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-4"><span class="gear-text"><strong>Halberd of Vigilance</strong> (Lann Tarv, Moonrise) — +2 reach weapon with +1 Initiative and reaction attack Advantage.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-5"><span class="gear-text"><strong>Enraging Heart Garb</strong> (Lann Tarv, Moonrise) — +2 Constitution and Wrath stacks while raging.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-6"><span class="gear-text"><strong>Ring of Free Action</strong> (Araj Oblodra, Moonrise) — Prevents enemies from paralyzing or slowing your frontline.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-7"><span class="gear-text"><strong>Balduran's Giantslayer</strong> (Wyrmway) — Doubles Strength modifier on damage and grants <em>Giant Form</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-8"><span class="gear-text"><strong>Bonespike Garb + Bonespike Boots + Bonespike Helmet</strong> (Rivington / Lower City) — Unarmored +2 CON, 15 temp HP on Rage, damage reduction, and physical resistance piercing.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="kar-9"><span class="gear-text"><strong>Amulet of Greater Health</strong> (House of Hope) — Sets Constitution to 23 (boosts unarmored AC &amp; HP pool above 250+).</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MINTHARA TAB ==================== -->
+  <section id="tab-minthara" class="tab-panel">
+    <div class="char-banner rose">
+      <div class="char-header">
+        <div class="char-title">Minthara — Conquest Paladin 12 / Divine Right Sorcerer 8</div>
+        <span class="char-subtitle badge-rose">Enchantment Aura Sorcadin • Quickened Fear • Soul Branding</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box primary"><div class="stat-label">STR</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">DEX</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">CON</div><div class="stat-val">14</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">8</div></div>
+        <div class="stat-box"><div class="stat-label">WIS</div><div class="stat-val">10</div></div>
+        <div class="stat-box primary"><div class="stat-label">CHA</div><div class="stat-val">16</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Best Swap For:</strong> Slot 2 (Lae'zel) from Act 2 onward &nbsp;|&nbsp;
+        <strong>Unique Bonus Action:</strong> <em>Soul Branding</em> (+2d4+1 fire damage &amp; +3m movement on next attack—great to cast on Gale!) &nbsp;|&nbsp;
+        <strong>Mod Synergy:</strong> Combines <em>Oath of Conquest</em> with LaserLlama's <em>Divine Right Sorcerer</em> + <em>Metamagic Extended</em>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–7</td>
+              <td><strong>Conquest Paladin 1–7:</strong> Fighting Style (<em>Defense</em>), <em>Conquering Presence</em>, <strong>ASI (+2 CHA → 18)</strong> at Lv 4, Extra Attack (Lv 5), <em>Aura of Protection</em> (Lv 6), <em>Aura of Conquest</em> (Lv 7)</td>
+              <td>Recruited at Moonrise around Lv 6–7—immediately comes online with +CHA save aura and 0-speed Fear lockdown.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 8–13</td>
+              <td><strong>Divine Right Sorcerer 1–6:</strong> <em>Authority</em> (enemies within 1.5m have <strong>Disadvantage on Enchantment saves</strong>), <em>Metamagic: Quickened &amp; Twinned Spell</em>, bonus spells (<em>Command</em>, <em>Calm Emotions</em>, <em>Spirit Guardians</em>), <strong>ASI (+2 CHA → 20)</strong> at Sorc 4</td>
+              <td><strong>Insane Synergy with Gale:</strong> Standing beside Gale imposes Disadvantage on Enchantment saves while Gale's <em>Hypnotic Stare</em> imposes -3/-4 to Wisdom saves—making <em>Command</em>, <em>Hold Person</em>, and <em>Dominate Person</em> virtually unsaveable!</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 14–15</td>
+              <td><strong>Divine Right Sorcerer 7–8:</strong> Bonus spell <em>Confusion</em>, higher spell slots for upcast Smites, <strong>ASI (+2 STR → 18)</strong> at Sorc 8</td>
+              <td>Quickened <em>Confusion</em> or <em>Command</em> as a Bonus Action followed by two Divine Smite attacks in the same turn.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 16–20</td>
+              <td><strong>Conquest Paladin 8–12:</strong> <strong>ASI (+2 STR → 20)</strong> at Pal 8, <em>Fear</em> spell (Pal 9), <em>Aura of Courage</em> (Pal 10), <em>Improved Divine Smite</em> (<code>+1d8</code> radiant/hit at Pal 11), <strong>Feat: Savage Attacker or Alert</strong> at Pal 12</td>
+              <td>Caps both STR and CHA at 20 while stacking <em>Improved Divine Smite</em> with 7th-level Sorcadin spell slots.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Priority Spells &amp; Metamagic Loop</h2>
+        <ul class="clean-list">
+          <li><strong>Soul Branding (Bonus Action):</strong> Use when you don't need Quickened Spell—adds fire damage and +3m speed to Gale or Minthara without breaking Stealth/Invisibility.</li>
+          <li><strong>Twinned / Quickened Command:</strong> Upcast to hit 3–4 Wisdom-shredded targets at once, forcing them to drop weapons or grovel.</li>
+          <li><strong>Spirit Guardians (Sorc 5):</strong> Radiant AoE aura that stacks with <em>Aura of Conquest</em> to shred frozen enemies every turn.</li>
+          <li><strong>Shield &amp; Absorb Elements (Sorc 1):</strong> Reactions that push Minthara's heavy-armor AC past 27+.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="minthara-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="minthara-gear">
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2 (Recruitment)</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="min-1"><span class="gear-text"><strong>Helmet of Arcane Acuity</strong> (Mason's Guild, Reithwin) — Each weapon attack adds +2 Spell Save DC, guaranteeing 100% hit rate on Quickened <em>Command</em>/<em>Fear</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="min-2"><span class="gear-text"><strong>The Blood of Lathander / Phalar Aluve + Shield</strong> — Ideal 1H + Shield setup for melee aura stacking beside Gale.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="min-3"><span class="gear-text"><strong>Spidersilk Armor / Adamantine Splint Armor</strong> — High AC with Constitution save Advantage.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="min-4"><span class="gear-text"><strong>Band of the Mystic Scoundrel</strong> (Jungle, Circus of the Last Days) — Cast Enchantment/Illusion spells (<em>Command</em>, <em>Fear</em>, <em>Confusion</em>) as a Bonus Action after hitting with a weapon—saving your Sorcery Points!</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="min-5"><span class="gear-text"><strong>Nyrulna / Sacred Star / Crimson Mischief</strong> — High-damage 1H or versatile weapons for Divine Smite + Arcane Acuity stacking.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="min-6"><span class="gear-text"><strong>Armor of Persistence</strong> (Dammon, Lower City) — 20 AC with permanent <em>Blade Ward</em> and <em>Resistance</em>.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HALSIN TAB ==================== -->
+  <section id="tab-halsin" class="tab-panel">
+    <div class="char-banner teal">
+      <div class="char-header">
+        <div class="char-title">Halsin — Circle of the Moon Druid 20</div>
+        <span class="char-subtitle badge-teal">Elemental Myrmidon Tank • Ritual Wild Shape • Archdruid</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box"><div class="stat-label">STR</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">DEX</div><div class="stat-val">14</div></div>
+        <div class="stat-box primary"><div class="stat-label">CON</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">8</div></div>
+        <div class="stat-box primary"><div class="stat-label">WIS</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">CHA</div><div class="stat-val">10</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Best Swap For:</strong> Slot 2 (Lae'zel) or Slot 3 (Shadowheart) from Act 2 onward &nbsp;|&nbsp;
+        <strong>Mod Synergy:</strong> Leverages <em>Goon's Druid Overhaul</em>, <em>Druid Wild Shape Overhaul + DWSO - Wild Shape as Ritual</em>, and <em>Expansion Level 13–20</em>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–5</td>
+              <td><strong>Moon Druid 1–5:</strong> <em>Combat Wild Shape</em> (Bonus Action shift + spell-slot self-healing), <em>DWSO Ritual Wild Shape</em> (free out-of-combat utility forms), <em>Primal Strike</em> (Lv 6: magical attacks), <strong>Feat: Tavern Brawler (+1 CON → 17)</strong> at Lv 4</td>
+              <td><em>Tavern Brawler</em> adds your Wild Shape's Strength modifier twice to unarmed attack &amp; damage rolls (massive boost for Owlbear &amp; Earth Myrmidon!).</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 6–9</td>
+              <td><strong>Moon Druid 6–9:</strong> <em>Owlbear</em> &amp; <em>Sabre-Toothed Tiger</em> forms, <em>Conjure Woodland Beings</em>, <em>Wall of Stone</em>, <strong>Feat: Resilient (Constitution → 18)</strong> at Lv 8</td>
+              <td>Drop a big Concentration spell (<em>Spike Growth</em>, <em>Call Lightning</em>, or <em>Conjure Woodland Beings</em>) then Bonus Action Wild Shape into an Owlbear with 100+ extra HP.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 10–12</td>
+              <td><strong>Moon Druid 10–12:</strong> <strong>Elemental Wild Shape (Air, Earth, Fire, Water Myrmidons)</strong>, <em>Heroes' Feast</em> (Lv 11), <strong>ASI (+2 WIS → 18)</strong> at Lv 12</td>
+              <td><strong>Earth Myrmidon</strong> uses unarmed strikes (doubling <em>Tavern Brawler</em>) + prone knocks, while <strong>Air Myrmidon</strong> stuns priority bosses.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 13–20</td>
+              <td><strong>Moon Druid 13–20:</strong> <em>Reverse Gravity</em>, <em>Sunburst</em>, <em>Shapechange / Foresight</em> (Lv 17), <strong>Archdruid</strong> (Lv 20: unlimited Wild Shape charges!), <strong>ASI (+2 WIS → 20)</strong> at Lv 16, <strong>Feat: Alert</strong> at Lv 19</td>
+              <td>At Level 20, Halsin can refresh a full 140+ HP Elemental Myrmidon health bar every single round as a Bonus Action.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Priority Spells &amp; Wild Shape Loop</h2>
+        <ul class="clean-list">
+          <li><strong>Pre-Fight Buffs:</strong> Cast <em>Longstrider</em> on the party and <em>Heroes' Feast</em> (Lv 11+) after every Long Rest.</li>
+          <li><strong>Round 1 Spell → Shift:</strong> Cast <em>Call Lightning</em> (can re-trigger while shifted in DWSO/modded setups), <em>Sleet Storm</em>, or <em>Conjure Woodland Beings</em> (Dryad + Wood Woad summons), then Bonus Action Wild Shape.</li>
+          <li><strong>Best Forms:</strong> <strong>Owlbear</strong> (Levels 6–9 AoE Crushing Flight prone), <strong>Earth Myrmidon</strong> (Levels 10–20 Tavern Brawler unarmed burst), and <strong>Air Myrmidon</strong> (Electrified Flail Stuns).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="halsin-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="halsin-gear">
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2 (Recruitment)</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="hal-1"><span class="gear-text"><strong>Shapeshifter's Boon Ring</strong> (Strange Ox) — +1d4 to all skill checks while Wild Shaped or Disguised.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="hal-2"><span class="gear-text"><strong>Corvid Token</strong> (Mattis, Last Light Inn) — Grants +2m movement speed and Feather Fall in Wild Shape.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="hal-3"><span class="gear-text"><strong>Flawed Helldusk Gloves</strong> (Dammon, Last Light) — Adds <code>1d4</code> necrotic damage to unarmed Wild Shape strikes.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="hal-4"><span class="gear-text"><strong>Armor of Moonbasking</strong> (Voiceless Penitent Bareki, Undercity) — Must-have! Grants +2 AC, Advantage on spell saves, and 22 temporary HP every time you Wild Shape.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="hal-5"><span class="gear-text"><strong>Markoheshkir / Staff of Spellpower</strong> — Free 6th-level cast of <em>Heroes' Feast</em> or <em>Sunbeam</em> before shifting.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="hal-6"><span class="gear-text"><strong>Ring of Regeneration / Cloak of Protection</strong> — Passive healing and save bonuses in caster form.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== JAHEIRA TAB ==================== -->
+  <section id="tab-jaheira" class="tab-panel">
+    <div class="char-banner lime">
+      <div class="char-header">
+        <div class="char-title">Jaheira — Circle of Stars Druid 12 / Hunter Ranger 8</div>
+        <span class="char-subtitle badge-lime">Dual-Scimitar Harper • Unbreakable Concentration • Cosmic Omen</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box"><div class="stat-label">STR</div><div class="stat-val">8</div></div>
+        <div class="stat-box primary"><div class="stat-label">DEX</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">CON</div><div class="stat-val">14</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">10</div></div>
+        <div class="stat-box primary"><div class="stat-label">WIS</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">CHA</div><div class="stat-val">10</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Best Swap For:</strong> Slot 3 (Shadowheart) or Slot 4 (Astarion) &nbsp;|&nbsp;
+        <strong>Lockpicking Option:</strong> Pick <em>Urban Tracker</em> (Sleight of Hand proficiency) in Ranger 1 so Jaheira handles locks/traps when replacing Astarion &nbsp;|&nbsp;
+        <strong>Mod Synergy:</strong> Uses <em>Book of Druids - 5e Druid Subclasses (Circle of Stars)</em> + <em>Goon's Ranger Overhaul</em>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–6</td>
+              <td><strong>Circle of Stars Druid 1–6:</strong> <em>Starry Form</em> (<strong>Dragon</strong> sets a minimum roll of 10 on all Concentration saves; <strong>Archer</strong> fires radiant bonus-action bolts), <em>Cosmic Omen</em> (Lv 6: reaction to add/subtract <code>1d6</code> from any attack or save), <strong>Feat: Dual Wielder</strong> at Lv 4</td>
+              <td><em>Starry Form: Dragon</em> makes Jaheira's Concentration on <em>Sleet Storm</em> or <em>Call Lightning</em> virtually unbreakable, while <em>Cosmic Omen (Woe)</em> penalizes boss saves against Gale!</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 7–11</td>
+              <td><strong>Hunter Ranger 1–5:</strong> <em>Urban Tracker</em> (Sleight of Hand), <em>Two-Weapon Fighting</em>, <em>Horde Breaker</em> (free bonus weapon attack against adjacent foes), Extra Attack (Ranger 5), <strong>ASI (+2 WIS → 18)</strong> at Ranger 4</td>
+              <td>Restores Jaheira's classic dual-scimitar Harper melee/caster hybrid playstyle with 3–4 Wisdom-scaling scimitar strikes per turn.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 12–17</td>
+              <td><strong>Circle of Stars Druid 7–12:</strong> <em>Twinkling Constellations</em> (Lv 10: switch Starry Forms freely every turn + 20ft flight in Dragon form!), <em>Heroes' Feast</em> (Druid 11), <strong>ASI (+2 WIS → 20)</strong> at Druid 8, <strong>Feat: War Caster or Alert</strong> at Druid 12</td>
+              <td>Switch between <em>Dragon</em> (Concentration + flight) and <em>Archer</em> (radiant bonus attack) at the start of every turn with zero resource cost.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 18–20</td>
+              <td><strong>Hunter Ranger 6–8:</strong> <em>Iron Mind</em> (WIS save proficiency at Ranger 7), <em>Land's Stride</em>, <strong>ASI (+2 DEX → 18)</strong> at Ranger 8</td>
+              <td>Rounds out endgame AC, initiative, and Wisdom save immunity.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Priority Spells &amp; Constellation Tactics</h2>
+        <ul class="clean-list">
+          <li><strong>Dragon Constellation + Control:</strong> Activate <em>Starry Form: Dragon</em> and cast <em>Sleet Storm</em>, <em>Spike Growth</em>, or <em>Call Lightning</em>—taking less than 22 damage can never break your Concentration.</li>
+          <li><strong>Cosmic Omen (Woe) + Gale:</strong> Use Jaheira's Reaction to subtract <code>1d6</code> from an enemy's saving throw right when Gale casts <em>Hold Monster</em> or <em>Confusion</em>.</li>
+          <li><strong>Chalice Healing:</strong> Switch to <em>Starry Form: Chalice</em> when casting <em>Healing Word</em> to restore extra HP to Gale or Lae'zel without wasting your main Action.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="jaheira-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act2">Act 2</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="jaheira-gear">
+          <div class="gear-group" data-act="act2">
+            <div class="gear-act-title">Act 2 (Recruitment)</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="jah-1"><span class="gear-text"><strong>Sylvan Scimitar</strong> (Jaheira's starting weapon) — Uses your <strong>Wisdom modifier</strong> instead of Dexterity for attack and damage rolls!</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="jah-2"><span class="gear-text"><strong>Thorn Blade</strong> (Dammon, Last Light Inn) — Off-hand scimitar adding <code>1d4</code> poison damage while concentrating.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="jah-3"><span class="gear-text"><strong>Ring of Arcane Synergy</strong> (Crèche Y'llek) — Adds your +5 Wisdom modifier to weapon damage after casting a cantrip.</span></label>
+          </div>
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="jah-4"><span class="gear-text"><strong>Belm</strong> (Jaheira's Basement, Lower City) — Off-hand scimitar whose <em>Perfectly Balanced Strike</em> lets you make a Bonus Action attack with your Wisdom-scaling <em>Sylvan Scimitar</em>!</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="jah-5"><span class="gear-text"><strong>Khalid's Gift</strong> (Jaheira's Basement) — +1 Wisdom amulet (up to 21) + Aid + Curse immunity.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="jah-6"><span class="gear-text"><strong>Armor of Agility</strong> (Gloomy Fentonson, Lower City) — 21+ AC medium armor that still allows full spellcasting.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MINSC TAB ==================== -->
+  <section id="tab-minsc" class="tab-panel">
+    <div class="char-banner sky">
+      <div class="char-header">
+        <div class="char-title">Minsc — Hunter Ranger 12 / Wildheart Barbarian 8</div>
+        <span class="char-subtitle badge-sky">Wolf Pack Advantage • Whirlwind Cleave • Boo Blindness</span>
+      </div>
+      <div class="stat-strip">
+        <div class="stat-box primary"><div class="stat-label">STR</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">DEX</div><div class="stat-val">14</div></div>
+        <div class="stat-box primary"><div class="stat-label">CON</div><div class="stat-val">16</div></div>
+        <div class="stat-box"><div class="stat-label">INT</div><div class="stat-val">8</div></div>
+        <div class="stat-box"><div class="stat-label">WIS</div><div class="stat-val">10</div></div>
+        <div class="stat-box"><div class="stat-label">CHA</div><div class="stat-val">8</div></div>
+      </div>
+      <p style="font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Best Swap For:</strong> Slot 2 (Lae'zel) in Act 3 &nbsp;|&nbsp;
+        <strong>Unique Summon:</strong> <em>Summon Boo</em> (blind enemies with <em>Go for the Eyes!</em>) &nbsp;|&nbsp;
+        <strong>Mod Synergy:</strong> Combines <em>Goon's Ranger Overhaul</em>, <em>Dynamic Wildheart Barbarian</em>, and <em>5e Reckless Attack</em>.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Level 1–20 Progression Roadmap</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Class &amp; Key Picks</th>
+              <th>Tactical Impact in DIQ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lvl-col">Level 1–5</td>
+              <td><strong>Hunter Ranger 1–5:</strong> <em>Great Weapon Fighting / Defense</em>, <em>Colossus Slayer</em> (<code>+1d8</code> damage once per turn on injured targets), Extra Attack (Ranger 5), <strong>Feat: Great Weapon Master</strong> at Lv 4</td>
+              <td>Strong baseline martial chassis with non-concentration utility spells (<em>Longstrider</em>, <em>Jump</em>, <em>Goodberry</em>) usable before raging.</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 6–13</td>
+              <td><strong>Wildheart Barbarian 1–8:</strong> <em>Reckless Attack</em>, <strong>Wolf Heart</strong> (all allies within 2m of Minsc gain <strong>Advantage on melee attacks</strong>!), <em>Aspect of the Wolverine</em> (maims bleeding/poisoned foes), <em>Feral Instinct</em>, <strong>ASI (+2 STR → 18)</strong> at Barb 4, <strong>ASI (+2 STR → 20)</strong> at Barb 8</td>
+              <td><strong>Huge Gale Synergy:</strong> Standing next to Gale grants Gale <strong>permanent melee Advantage</strong> on every target, skyrocketing Gale's <em>Critical Feint</em> crit-fishing rate!</td>
+            </tr>
+            <tr>
+              <td class="lvl-col">Level 14–20</td>
+              <td><strong>Hunter Ranger 6–12:</strong> <em>Multiattack Defense</em> (+4 AC against subsequent hits from the same attacker), <strong>Whirlwind Attack</strong> (Ranger 11: melee AoE attack hitting every enemy within reach!), <strong>Feat: Savage Attacker</strong> (Ranger 8) &amp; <strong>Alert / Tough</strong> (Ranger 12)</td>
+              <td><strong>Whirlwind Attack + Reckless Attack + GWM</strong> lets Minsc swing his greatsword at every surrounded enemy simultaneously with Advantage.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>Key Combat Tactics</h2>
+        <ul class="clean-list">
+          <li><strong>Wolf Pack Duo with Gale:</strong> Position Minsc directly beside Gale's target—Minsc's <em>Wolf Heart</em> gives Gale Advantage on all melee attacks, while Gale's <em>Dazzling Feints</em> blind and slow enemies attacking Minsc.</li>
+          <li><strong>Boo + Wolverine Maim:</strong> Throw <em>Boo</em> to Blind a dangerous boss, or pair <em>Aspect of the Wolverine</em> with bleed weapons to lock enemies at 0 movement speed.</li>
+          <li><strong>Non-Concentration Pre-Buffs:</strong> Cast <em>Longstrider</em> and <em>Enhanced Leap</em> on the party before combat so Minsc's spell slots never go to waste while Raging.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Best-in-Slot Gear Checklist</h2>
+        <div class="act-filters" data-target="minsc-gear">
+          <button class="act-pill active" data-act="all">All Acts</button>
+          <button class="act-pill" data-act="act3">Act 3</button>
+        </div>
+        <div id="minsc-gear">
+          <div class="gear-group" data-act="act3">
+            <div class="gear-act-title">Act 3 (Recruitment)</div>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="minsc-1"><span class="gear-text"><strong>Balduran's Giantslayer</strong> (Wyrmway) or <strong>Nyrulna</strong> (Circus) — Massive 2H reach cleaves for <em>Whirlwind Attack</em>.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="minsc-2"><span class="gear-text"><strong>Armor of Agility</strong> (Lower City) or <strong>Bonespike Garb</strong> (Rivington) — Both work seamlessly with Barbarian Rage.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="minsc-3"><span class="gear-text"><strong>Legacy of the Masters</strong> (Dammon, Lower City) — +2 Attack and Damage rolls on every <em>Whirlwind Attack</em> swing.</span></label>
+            <label class="gear-item"><input type="checkbox" class="gear-cb" data-id="minsc-4"><span class="gear-text"><strong>Gauntlets of Hill Giant Strength</strong> (House of Hope) — Optional 23 STR boost if Lae'zel/Karlach claimed the Act 2 Strength potion.</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div class="modal-backdrop" id="syncModal">
+  <div class="modal-box">
+    <h3>Checklist Backup &amp; Device Transfer</h3>
+    <p style="font-size: 0.86rem; color: var(--text-secondary);">
+      Checklist progress is saved locally on each device. Copy this code to move your checked gear and permanent bonuses between your PC and Android phone:
+    </p>
+    <textarea id="syncDataArea" placeholder="Paste backup JSON code here to restore..."></textarea>
+    <div id="syncStatusMsg" style="font-size: 0.82rem; color: var(--accent-emerald); min-height: 1.2rem; margin-bottom: 0.4rem;"></div>
+    <div class="modal-actions">
+      <button class="btn" id="copySyncBtn">Copy Backup Code</button>
+      <button class="btn" id="importSyncBtn">Restore from Code</button>
+      <button class="btn" id="closeSyncBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Tab Navigation
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  const viewToggleBtn = document.getElementById('viewToggleBtn');
+  let showAll = false;
+
+  function activateTab(tabName) {
+    if (showAll) {
+      showAll = false;
+      document.body.classList.remove('show-all');
+      viewToggleBtn.textContent = 'View: Single Tab';
+    }
+    tabBtns.forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
+    tabPanels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + tabName));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+  });
+
+  // Jump links from Overview tables to Companion tabs
+  document.querySelectorAll('.jump-link').forEach(link => {
+    link.addEventListener('click', () => activateTab(link.dataset.jump));
+  });
+
+  viewToggleBtn.addEventListener('click', () => {
+    showAll = !showAll;
+    document.body.classList.toggle('show-all', showAll);
+    viewToggleBtn.textContent = showAll ? 'View: Full Page' : 'View: Single Tab';
+    if (showAll) {
+      document.querySelectorAll('.tier-block').forEach(b => b.classList.remove('hidden'));
+    }
+  });
+
+  // Theme Toggle
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const savedTheme = localStorage.getItem('bg3-diq-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  themeToggleBtn.textContent = savedTheme === 'dark' ? 'Theme: Dark' : 'Theme: Light';
+
+  themeToggleBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('bg3-diq-theme', next);
+    themeToggleBtn.textContent = next === 'dark' ? 'Theme: Dark' : 'Theme: Light';
+  });
+
+  // Combat Level Bracket Selector
+  const tierPills = document.querySelectorAll('#combatTierFilters .tier-pill');
+  const tierBlocks = document.querySelectorAll('.tier-block');
+
+  tierPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      tierPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const selectedTier = pill.dataset.tier;
+      tierBlocks.forEach(block => {
+        if (selectedTier === 'all' || block.dataset.tier === selectedTier) {
+          block.classList.remove('hidden');
+        } else {
+          block.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Act Filters for Gear & Permanent Bonus Checklists
+  document.querySelectorAll('.act-filters').forEach(filterBar => {
+    const targetId = filterBar.dataset.target;
+    const container = document.getElementById(targetId);
+    const pills = filterBar.querySelectorAll('.act-pill');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const selectedAct = pill.dataset.act;
+        container.querySelectorAll('.gear-group, .bonus-group').forEach(group => {
+          if (selectedAct === 'all' || group.dataset.act === selectedAct) {
+            group.classList.remove('hidden');
+          } else {
+            group.classList.add('hidden');
+          }
+        });
+      });
+    });
+  });
+
+  // Persistent Gear & Bonus Checkboxes
+  const gearCheckboxes = document.querySelectorAll('.gear-cb');
+  const bonusCheckboxes = document.querySelectorAll('.bonus-cb');
+  const bonusCounter = document.getElementById('bonusCounter');
+  const savedGear = JSON.parse(localStorage.getItem('bg3-diq-gear') || '{}');
+  const savedBonuses = JSON.parse(localStorage.getItem('bg3-diq-bonuses') || '{}');
+
+  function updateBonusCounter() {
+    const total = bonusCheckboxes.length;
+    const checkedCount = Array.from(bonusCheckboxes).filter(cb => cb.checked).length;
+    bonusCounter.textContent = `${checkedCount} / ${total}`;
+  }
+
+  gearCheckboxes.forEach(cb => {
+    const id = cb.dataset.id;
+    if (savedGear[id]) {
+      cb.checked = true;
+      cb.closest('.gear-item').classList.add('checked');
+    }
+    cb.addEventListener('change', () => {
+      savedGear[id] = cb.checked;
+      localStorage.setItem('bg3-diq-gear', JSON.stringify(savedGear));
+      cb.closest('.gear-item').classList.toggle('checked', cb.checked);
+    });
+  });
+
+  bonusCheckboxes.forEach(cb => {
+    const id = cb.dataset.id;
+    if (savedBonuses[id]) {
+      cb.checked = true;
+      cb.closest('.gear-item').classList.add('checked');
+    }
+    cb.addEventListener('change', () => {
+      savedBonuses[id] = cb.checked;
+      localStorage.setItem('bg3-diq-bonuses', JSON.stringify(savedBonuses));
+      cb.closest('.gear-item').classList.toggle('checked', cb.checked);
+      updateBonusCounter();
+    });
+  });
+
+  updateBonusCounter();
+
+  document.getElementById('resetAllBtn').addEventListener('click', () => {
+    localStorage.removeItem('bg3-diq-gear');
+    localStorage.removeItem('bg3-diq-bonuses');
+    document.querySelectorAll('.gear-item input[type="checkbox"]').forEach(cb => {
+      cb.checked = false;
+      cb.closest('.gear-item').classList.remove('checked');
+    });
+    updateBonusCounter();
+  });
+
+  // Live Search Filter
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim().toLowerCase();
+    const rows = document.querySelectorAll('tbody tr, .gear-item, .clean-list li, .step-card');
+
+    if (!query) {
+      rows.forEach(el => {
+        el.style.display = '';
+        el.style.outline = '';
+      });
+      return;
+    }
+
+    // Reveal all tabs, level tiers, and act groups while searching
+    if (!showAll) {
+      document.body.classList.add('show-all');
+      viewToggleBtn.textContent = 'View: Full Page';
+      showAll = true;
+    }
+    tierBlocks.forEach(b => b.classList.remove('hidden'));
+    document.querySelectorAll('.gear-group, .bonus-group').forEach(g => g.classList.remove('hidden'));
+
+    rows.forEach(el => {
+      const text = el.textContent.toLowerCase();
+      if (text.includes(query)) {
+        el.style.display = '';
+        el.style.outline = '1px solid var(--accent-gold)';
+      } else {
+        el.style.display = 'none';
+        el.style.outline = '';
+      }
+    });
+  });
+
+  // Update Android status bar theme-color dynamically
+  const metaThemeColor = document.getElementById('metaThemeColor');
+  function syncStatusBarColor(theme) {
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#0f1117' : '#f4f1ea');
+    }
+  }
+  syncStatusBarColor(savedTheme);
+
+  themeToggleBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    syncStatusBarColor(current);
+  });
+
+  // Backup / Sync Modal Logic
+  const syncModal = document.getElementById('syncModal');
+  const syncDataArea = document.getElementById('syncDataArea');
+  const syncStatusMsg = document.getElementById('syncStatusMsg');
+
+  document.getElementById('syncModalBtn').addEventListener('click', () => {
+    const payload = {
+      gear: JSON.parse(localStorage.getItem('bg3-diq-gear') || '{}'),
+      bonuses: JSON.parse(localStorage.getItem('bg3-diq-bonuses') || '{}')
+    };
+    syncDataArea.value = JSON.stringify(payload);
+    syncStatusMsg.textContent = '';
+    syncModal.classList.add('open');
+  });
+
+  document.getElementById('closeSyncBtn').addEventListener('click', () => {
+    syncModal.classList.remove('open');
+  });
+
+  syncModal.addEventListener('click', (e) => {
+    if (e.target === syncModal) syncModal.classList.remove('open');
+  });
+
+  document.getElementById('copySyncBtn').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(syncDataArea.value);
+      syncStatusMsg.style.color = 'var(--accent-emerald)';
+      syncStatusMsg.textContent = 'Backup code copied to clipboard!';
+    } catch (err) {
+      syncDataArea.select();
+      document.execCommand('copy');
+      syncStatusMsg.style.color = 'var(--accent-emerald)';
+      syncStatusMsg.textContent = 'Backup code selected and copied!';
+    }
+  });
+
+  document.getElementById('importSyncBtn').addEventListener('click', () => {
+    try {
+      const parsed = JSON.parse(syncDataArea.value.trim());
+      if (!parsed || typeof parsed !== 'object') throw new Error('Invalid format');
+      const newGear = parsed.gear || {};
+      const newBonuses = parsed.bonuses || {};
+      localStorage.setItem('bg3-diq-gear', JSON.stringify(newGear));
+      localStorage.setItem('bg3-diq-bonuses', JSON.stringify(newBonuses));
+
+      gearCheckboxes.forEach(cb => {
+        const checked = !!newGear[cb.dataset.id];
+        cb.checked = checked;
+        cb.closest('.gear-item').classList.toggle('checked', checked);
+      });
+      bonusCheckboxes.forEach(cb => {
+        const checked = !!newBonuses[cb.dataset.id];
+        cb.checked = checked;
+        cb.closest('.gear-item').classList.toggle('checked', checked);
+      });
+      updateBonusCounter();
+      syncStatusMsg.style.color = 'var(--accent-emerald)';
+      syncStatusMsg.textContent = 'Progress restored successfully!';
+    } catch (e) {
+      syncStatusMsg.style.color = 'var(--accent-crimson)';
+      syncStatusMsg.textContent = 'Invalid backup code. Please paste the exact JSON string.';
+    }
+  });
+
+  // PWA Install Prompt (Android Chrome / Edge / Samsung Internet)
+  let deferredPrompt = null;
+  const installAppBtn = document.getElementById('installAppBtn');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installAppBtn.classList.add('visible');
+  });
+
+  installAppBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      installAppBtn.classList.remove('visible');
+    }
+    deferredPrompt = null;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    installAppBtn.classList.remove('visible');
+    deferredPrompt = null;
+  });
+
+  // Register Service Worker for Offline Android App Support
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+
+</script>
+</body>
+</html>
