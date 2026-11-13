@@ -1133,6 +1133,147 @@
     }
   }
 
+
+  /* Desktop / Landscape In-Page Section Jump Bar */
+  .desktop-section-jumps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+    padding: 0.55rem 0.85rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+
+  .jump-bar-label {
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-right: 0.2rem;
+  }
+
+  .section-jump-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.32rem 0.68rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .section-jump-pill:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  .section-jump-pill.active {
+    background: var(--accent-gold-soft);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+  }
+
+  .section-jump-pill .jump-arrow {
+    font-size: 0.72rem;
+    opacity: 0.85;
+  }
+
+  /* Brief highlight pulse when jumping to a section */
+  @keyframes sectionJumpPulse {
+    0% { box-shadow: 0 0 0 2px var(--accent-gold), var(--shadow); }
+    100% { box-shadow: var(--shadow); }
+  }
+
+  .jump-highlight {
+    animation: sectionJumpPulse 1.35s ease-out;
+  }
+
+  /* Floating Back-to-Top Button */
+  .back-to-top-btn {
+    position: fixed;
+    right: 1rem;
+    bottom: calc(1.1rem + env(safe-area-inset-bottom));
+    z-index: 70;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    padding: 0.48rem 0.78rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.18s, transform 0.18s;
+  }
+
+  .back-to-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* Portrait Mobile Sticky Dropdown + Sub-Bar Section Jumps */
+  @media (max-width: 768px) and (orientation: portrait), (max-width: 540px) {
+    .desktop-section-jumps {
+      display: none;
+    }
+
+    .mobile-nav-bar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.42rem;
+      padding: 0.5rem 0.7rem 0.52rem;
+    }
+
+    .mobile-nav-top {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: 100%;
+    }
+
+    .mobile-section-jumps {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-top: 0.1rem;
+    }
+
+    .mobile-section-jumps::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-section-jumps .jump-bar-label {
+      font-size: 0.68rem;
+      margin-right: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .mobile-section-jumps .section-jump-pill {
+      padding: 0.28rem 0.56rem;
+      font-size: 0.75rem;
+      border-radius: 7px;
+      background: var(--bg-card);
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1183,30 +1324,33 @@
   </div>
 </header>
 
-<div class="mobile-nav-bar" aria-label="Mobile Section Switcher">
-  <button class="mobile-nav-step" id="prevTabBtn" title="Previous Section" aria-label="Previous Section">&#8249;</button>
-  <div class="mobile-select-wrap">
-    <select class="mobile-tab-select" id="mobileTabSelect" aria-label="Select Build or Guide Section">
-      <optgroup label="Core Squad &amp; Trackers">
-        <option value="overview">Overview &amp; Combat Sequence</option>
-        <option value="bonuses" id="mobileBonusOption">Permanent Bonuses (0 / 14)</option>
-        <option value="gale">Gale — Mesmerist 20 (Origin)</option>
-        <option value="laezel">Lae'zel — Paladin / Echo Knight</option>
-        <option value="shadowheart">Shadowheart — Twilight Cleric 20</option>
-        <option value="astarion">Astarion — Gloom Stalker / Fencer</option>
-      </optgroup>
-      <optgroup label="Quest Swap Companions">
-        <option value="wyll">Wyll — Chronurgy Wizard 20</option>
-        <option value="karlach">Karlach — Zealot / Champion</option>
-        <option value="minthara">Minthara — Conquest / Sorcerer</option>
-        <option value="halsin">Halsin — Moon Druid 20</option>
-        <option value="jaheira">Jaheira — Stars Druid / Hunter</option>
-        <option value="minsc">Minsc — Hunter / Wildheart</option>
-      </optgroup>
-    </select>
-    <span class="mobile-select-arrow">&#9662;</span>
+<div class="mobile-nav-bar" id="mobileNavBar" aria-label="Mobile Page &amp; Section Navigation">
+  <div class="mobile-nav-top">
+    <button class="mobile-nav-step" id="prevTabBtn" title="Previous Page" aria-label="Previous Page">&#8249;</button>
+    <div class="mobile-select-wrap">
+      <select class="mobile-tab-select" id="mobileTabSelect" aria-label="Select Build or Guide Page">
+        <optgroup label="Core Squad &amp; Trackers">
+          <option value="overview">Overview &amp; Combat Sequence</option>
+          <option value="bonuses" id="mobileBonusOption">Permanent Bonuses (0 / 14)</option>
+          <option value="gale">Gale — Mesmerist 20 (Origin)</option>
+          <option value="laezel">Lae'zel — Paladin / Echo Knight</option>
+          <option value="shadowheart">Shadowheart — Twilight Cleric 20</option>
+          <option value="astarion">Astarion — Gloom Stalker / Fencer</option>
+        </optgroup>
+        <optgroup label="Quest Swap Companions">
+          <option value="wyll">Wyll — Chronurgy Wizard 20</option>
+          <option value="karlach">Karlach — Zealot / Champion</option>
+          <option value="minthara">Minthara — Conquest / Sorcerer</option>
+          <option value="halsin">Halsin — Moon Druid 20</option>
+          <option value="jaheira">Jaheira — Stars Druid / Hunter</option>
+          <option value="minsc">Minsc — Hunter / Wildheart</option>
+        </optgroup>
+      </select>
+      <span class="mobile-select-arrow">&#9662;</span>
+    </div>
+    <button class="mobile-nav-step" id="nextTabBtn" title="Next Page" aria-label="Next Page">&#8250;</button>
   </div>
-  <button class="mobile-nav-step" id="nextTabBtn" title="Next Section" aria-label="Next Section">&#8250;</button>
+  <div class="mobile-section-jumps" id="mobileSectionJumps" aria-label="Jump to section on this page"></div>
 </div>
 
 <main>
@@ -2661,6 +2805,8 @@
   </section>
 </main>
 
+<button class="back-to-top-btn" id="backToTopBtn" title="Back to Top" aria-label="Back to Top">&#8593; Top</button>
+
 
 <div class="modal-backdrop" id="syncModal">
   <div class="modal-box">
@@ -3068,6 +3214,235 @@
   window.addEventListener('appinstalled', () => {
     if (mobileInstallAppBtn) mobileInstallAppBtn.classList.remove('visible');
   });
+
+
+  // ==================== IN-PAGE SECTION QUICK JUMPS ====================
+  const mobileNavBar = document.getElementById('mobileNavBar');
+  const mobileSectionJumps = document.getElementById('mobileSectionJumps');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+
+  function getShortSectionLabel(rawTitle, index, panelId) {
+    const t = rawTitle.toLowerCase();
+    if (panelId === 'overview') {
+      if (t.includes('primary 4-person')) return 'Core Squad';
+      if (t.includes('companion substitution')) return 'Quest Swaps';
+      if (t.includes('combat turn')) return 'Combat Turns';
+      if (t.includes('origin setup')) return 'Origin Setup';
+      if (t.includes('survives melee')) return 'Melee Survival';
+    }
+    if (t.includes('level 1–20') || t.includes('level 1-20')) return 'Lv 1–20';
+    if (t.includes('gear checklist')) return 'Gear Checklist';
+    if (t.includes('priority spells & smite')) return 'Spells & Smites';
+    if (t.includes('priority spells & buff')) return 'Spells & Buffs';
+    if (t.includes('priority spells & lock')) return 'Spells & Locks';
+    if (t.includes('priority spells & metamagic')) return 'Spells & Metamagic';
+    if (t.includes('priority spells & wild shape')) return 'Spells & Forms';
+    if (t.includes('priority spells & constellation')) return 'Spells & Stars';
+    if (t.includes('priority spells')) return 'Priority Spells';
+    if (t.includes('combat & utility')) return 'Combat Tactics';
+    if (t.includes('combat tactics')) return 'Combat Tactics';
+    return rawTitle;
+  }
+
+  // Assign stable anchor IDs and build section metadata for every tab panel
+  const panelSectionsMap = {};
+
+  tabPanels.forEach(panel => {
+    const panelId = panel.id.replace('tab-', '');
+    const sections = [];
+
+    if (panelId === 'bonuses') {
+      const banner = panel.querySelector('.char-banner');
+      if (banner) {
+        banner.id = 'sec-bonuses-top';
+        sections.push({ id: banner.id, label: 'Overview' });
+      }
+      panel.querySelectorAll('.bonus-group').forEach(group => {
+        const act = group.dataset.act || '';
+        const count = group.querySelectorAll('.bonus-cb').length;
+        const labelMap = { act1: `Act 1 (${count})`, act2: `Act 2 (${count})`, act3: `Act 3 (${count})` };
+        group.id = `sec-bonuses-${act}`;
+        sections.push({ id: group.id, label: labelMap[act] || act.toUpperCase(), actFilter: act });
+      });
+    } else {
+      const banner = panel.querySelector('.char-banner');
+      if (banner) {
+        banner.id = `sec-${panelId}-stats`;
+        sections.push({ id: banner.id, label: 'Stats' });
+      }
+
+      const cards = Array.from(panel.querySelectorAll('.card')).filter(c => c.querySelector('h2'));
+      cards.forEach((card, idx) => {
+        const h2 = card.querySelector('h2');
+        const rawTitle = h2.textContent.trim();
+        const shortLabel = getShortSectionLabel(rawTitle, idx, panelId);
+        const secId = `sec-${panelId}-${idx + 1}`;
+        card.id = secId;
+        sections.push({ id: secId, label: shortLabel });
+      });
+    }
+
+    panelSectionsMap[panelId] = sections;
+
+    // Also render a clean desktop/landscape jump strip inside each panel
+    if (sections.length > 1) {
+      const desktopBar = document.createElement('div');
+      desktopBar.className = 'desktop-section-jumps';
+      desktopBar.setAttribute('aria-label', 'Jump to section on this page');
+      const lbl = document.createElement('span');
+      lbl.className = 'jump-bar-label';
+      lbl.textContent = 'Jump to:';
+      desktopBar.appendChild(lbl);
+
+      sections.forEach(sec => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'section-jump-pill';
+        btn.dataset.targetId = sec.id;
+        if (sec.actFilter) btn.dataset.actFilter = sec.actFilter;
+        btn.innerHTML = `<span class="jump-arrow">&#8595;</span>${sec.label}`;
+        btn.addEventListener('click', () => jumpToSection(sec.id, sec.actFilter));
+        desktopBar.appendChild(btn);
+      });
+
+      const firstBanner = panel.querySelector('.char-banner');
+      if (firstBanner && firstBanner.nextSibling) {
+        panel.insertBefore(desktopBar, firstBanner.nextSibling);
+      } else {
+        panel.insertBefore(desktopBar, panel.firstChild);
+      }
+    }
+  });
+
+  function jumpToSection(targetId, actFilter) {
+    const targetEl = document.getElementById(targetId);
+    if (!targetEl) return;
+
+    // If jumping to a specific Act group in Permanent Bonuses, ensure "All Acts" is active so it's visible
+    if (actFilter) {
+      const bonusFilterBar = document.querySelector('.act-filters[data-target="bonus-list"]');
+      if (bonusFilterBar) {
+        const allPill = bonusFilterBar.querySelector('.act-pill[data-act="all"]');
+        if (allPill && !allPill.classList.contains('active')) {
+          allPill.click();
+        }
+      }
+    }
+
+    // Calculate sticky mobile header offset so target heading lands cleanly below the dropdown + jump bar
+    const stickyOffset = (mobileNavBar && mobileNavBar.offsetParent !== null)
+      ? mobileNavBar.offsetHeight + 10
+      : 14;
+
+    const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - stickyOffset;
+    window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+
+    // Highlight active pill and pulse target card
+    document.querySelectorAll('.section-jump-pill').forEach(p => {
+      p.classList.toggle('active', p.dataset.targetId === targetId);
+    });
+    targetEl.classList.remove('jump-highlight');
+    void targetEl.offsetWidth;
+    targetEl.classList.add('jump-highlight');
+  }
+
+  function renderMobileSectionJumps(tabName) {
+    if (!mobileSectionJumps) return;
+    const sections = panelSectionsMap[tabName] || [];
+    mobileSectionJumps.innerHTML = '';
+
+    if (sections.length === 0) {
+      mobileSectionJumps.style.display = 'none';
+      return;
+    }
+    mobileSectionJumps.style.display = '';
+
+    const lbl = document.createElement('span');
+    lbl.className = 'jump-bar-label';
+    lbl.textContent = 'Jump:';
+    mobileSectionJumps.appendChild(lbl);
+
+    sections.forEach((sec, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'section-jump-pill' + (idx === 0 ? ' active' : '');
+      btn.dataset.targetId = sec.id;
+      if (sec.actFilter) btn.dataset.actFilter = sec.actFilter;
+      btn.innerHTML = `<span class="jump-arrow">&#8595;</span>${sec.label}`;
+      btn.addEventListener('click', () => jumpToSection(sec.id, sec.actFilter));
+      mobileSectionJumps.appendChild(btn);
+    });
+  }
+
+  // Hook into activateTab so switching pages immediately refreshes the jump links under the dropdown
+  const prevActivateTabForJumps = activateTab;
+  activateTab = function(tabName) {
+    prevActivateTabForJumps(tabName);
+    renderMobileSectionJumps(tabName);
+  };
+
+  // Re-bind all page switchers to use the updated activateTab
+  tabBtns.forEach(btn => {
+    btn.onclick = () => activateTab(btn.dataset.tab);
+  });
+  document.querySelectorAll('.jump-link').forEach(link => {
+    link.onclick = () => activateTab(link.dataset.jump);
+  });
+  if (mobileTabSelect) {
+    mobileTabSelect.onchange = (e) => activateTab(e.target.value);
+  }
+  if (prevTabBtn) {
+    prevTabBtn.onclick = () => {
+      const current = mobileTabSelect ? mobileTabSelect.value : 'overview';
+      const idx = tabOrder.indexOf(current);
+      activateTab(tabOrder[(idx - 1 + tabOrder.length) % tabOrder.length]);
+    };
+  }
+  if (nextTabBtn) {
+    nextTabBtn.onclick = () => {
+      const current = mobileTabSelect ? mobileTabSelect.value : 'overview';
+      const idx = tabOrder.indexOf(current);
+      activateTab(tabOrder[(idx + 1) % tabOrder.length]);
+    };
+  }
+
+  // Initialize jump links for the starting Overview tab
+  renderMobileSectionJumps('overview');
+
+  // Update active jump pill & Back-to-Top visibility on scroll
+  window.addEventListener('scroll', () => {
+    if (backToTopBtn) {
+      backToTopBtn.classList.toggle('visible', window.scrollY > 340);
+    }
+
+    const activePanel = document.querySelector('.tab-panel.active');
+    if (!activePanel) return;
+    const panelId = activePanel.id.replace('tab-', '');
+    const sections = panelSectionsMap[panelId] || [];
+    if (sections.length === 0) return;
+
+    const stickyOffset = (mobileNavBar && mobileNavBar.offsetParent !== null)
+      ? mobileNavBar.offsetHeight + 28
+      : 40;
+
+    let currentSecId = sections[0].id;
+    for (const sec of sections) {
+      const el = document.getElementById(sec.id);
+      if (el && el.getBoundingClientRect().top <= stickyOffset) {
+        currentSecId = sec.id;
+      }
+    }
+
+    document.querySelectorAll('.section-jump-pill').forEach(p => {
+      p.classList.toggle('active', p.dataset.targetId === currentSecId);
+    });
+  }, { passive: true });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 </script>
 </body>

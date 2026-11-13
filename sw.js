@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bg3-diq-guide-v3-pwa-2';
+const CACHE_NAME = 'bg3-diq-guide-v3-pwa-3';
 const ASSETS = [
   './',
   './index.html',
